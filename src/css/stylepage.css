@@ -1,0 +1,30 @@
+.outlineElement_SR {	
+	outline:2px #3399ff solid;
+	background-color: #e4eff9;
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icon16.png'); 
+	background-repeat: no-repeat; 
+	background-position: right top;
+}
+
+.autoselectNotification_SR { 
+	position:fixed; 
+	top:95%; 
+	left:50%; 
+	width:665px; 
+	height:60px; 
+	padding: 7px 0 0 45px !important;
+	color: #3399ff;
+	background: #3399ff;
+	background-image: url('chrome-extension://__MSG_@@extension_id__/notificationBanner.png'); 
+	background-repeat: no-repeat; 
+	background-position: left middle;	
+	border:4px solid #3399ff;
+	border-radius: 10px 10px 0px 0px; 
+	text-align: left;
+	display: table-cell;
+	vertical-align: middle;
+	/* Hide the text. */
+    	text-indent: 100%;
+    	white-space: nowrap;
+    	overflow: hidden;
+}

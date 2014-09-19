@@ -1,0 +1,35 @@
+{
+	"manifest_version": 2,
+  	"name": "Sprint Reader - Speed Reading Extension",
+  	"description": "Speed reading made easy, train yourself to read 1800+ words per minute. Rapid serial visual presentation (RSVP) at its best!",
+  	"version": "2.0",
+  	"content_scripts": [{
+      		"matches": ["http://*/*", "https://*/*"],
+		"css": ["src/css/stylepage.css"],
+      		"js": ["lib/jquery/jquery.min.js", "src/content.js"]
+    	}],
+	"web_accessible_resources": [
+    		"*.png"
+	],
+  	"commands": {
+    		"sprint-read-shortcut": {
+      			"suggested_key": {
+        			"default": "Ctrl+Shift+Z"
+      			},
+      		"description": "Sprint read selected text"
+      		}
+	},
+	"permissions": ["contextMenus", "clipboardRead", "\u003Call_urls\u003E"],
+  	"background": {
+    		"page": "src/background.html"
+  	},
+  	"browser_action": {
+    		"default_popup": "src/popup.html",
+		"default_icon": "src/graphics/icon128.png"
+  	},
+  	"icons": { "16": "src/graphics/icon16.png",
+           	"48": "src/graphics/icon48.png",
+          	"128": "src/graphics/icon128.png" 
+		},
+	"content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com https://apis.google.com https://connect.facebook.net; object-src 'self'"
+}
