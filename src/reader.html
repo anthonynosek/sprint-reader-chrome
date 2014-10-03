@@ -146,7 +146,7 @@
 	                    <div class="input-column-container"> 
                             <div class="input-column-left">  
                                 <div id="controls">
-                                    <label>Font</label>						
+                                    <label for"fontselection">Font</label>						
                                     <div id="font" class="bfh-selectbox bfh-fonts" data-family="Consolas">
                                         <input id="fontselection" type="hidden" value="">
                                         <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
@@ -162,19 +162,19 @@
                                         </div>
                                     </div>
                                     <div class="input-group">
-                                        <label>Font Size (pixels)</label>	
+                                        <label for"fontsize">Font Size (pixels)</label>	
                                         <input id="fontsize" type="number" class="form-control" placeholder="60">
                                     </div>
                                     <div class="input-group">
-                                        <label>Words per minute (<b>WPM</b>)</label>
+                                        <label for="wpm">Words per minute (<b>WPM</b>)</label>
                                         <input id="wpm" type="number" class="form-control" placeholder="300">
                                     </div>
                                     <div class="input-group">
-                                        <label>Words per slide (<b>Chunk size</b>)</label>
+                                        <label for="chunk">Words per slide (<b>Chunk size</b>)</label>
                                         <input id="chunk" type="number" class="form-control" placeholder="1">																		
                                     </div>
                            			<div class="input-group">
-                                        <label>Color Scheme</label>
+                                        <label for="color">Color Scheme</label>
                                         <select id="color" name="colorScheme" class="form-control" form="settings">
                                             <option value="0">White (Default)</option>
                                             <option value="1">Black</option>
@@ -208,20 +208,20 @@
                                             <input id="autostartseconds" type="number" class="form-control" placeholder="2">
                                         </div>   
                                         <div class="input-group">
-                                            <label class="checkbox_plain" for="checkbox" id="autoclosereaderlabel">
+                                            <label class="checkbox_plain" for="autoclosereader" id="autoclosereaderlabel">
                                             <input type="checkbox" id="autoclosereader">
                                             Auto close reader window on completion
                                             </label>
                                         </div> 
                                         <div id="spacer"></div>
-                                        <label class="control-label" for="checkboxes"><b>Text orientation</b></label>
+                                        <label class="control-label"><b>Text orientation</b></label>
                                         <div id="spacer"></div>  
                                         <div class="input-group">
-                                            <label class="checkbox_plain_tight" for="checkbox" id="wordrighttoleftlabel">
+                                            <label class="checkbox_plain_tight" for="wordrighttoleft" id="wordrighttoleftlabel">
                                             <input type="checkbox" id="wordrighttoleft">
                                             Words read from <b>right-to-left (RTL)</b>
                                             </label>
-                                            <label class="checkbox_plain_tight" for="checkbox" id="autotextorientationlabel">
+                                            <label class="checkbox_plain_tight" for="autotextorientation" id="autotextorientationlabel">
                                             <input type="checkbox" id="autotextorientation">
                                             Try auto-detecting text orientation</b>
                                             </label>
@@ -248,7 +248,7 @@
                     	<div class="input-column-container"> 
                             <div class="input-column-left"> 
                                 <div id="controls">                                    
-                                    <label class="control-label" for="checkboxes"><b>Context sensitive delays</b><br> - Enable and enter millisecond (ms) delay</label>
+                                    <label class="control-label"><b>Context sensitive delays</b><br> - Enable and enter millisecond (ms) delay</label>
                                     <div class="controls">
                                         <label class="checkbox" for="pausecomma">Pause after <b>comma</b> (,)</label>
                                         <div class="input-group">
@@ -280,7 +280,7 @@
                                     <div class="controls">
                                         <div id="spacer"></div>
                                         <div class="input-group">
-                                            <label>Display algorithm</label>
+                                            <label for="algorithm">Display algorithm</label>
                                             <select id="algorithm" name="algorithm" class="form-control" form="settings">
                                                 <option value="0">Basic</option>
                                                 <option value="1">Word Length</option>
@@ -288,7 +288,7 @@
                                         </div>                                    
                                         <div id="spacer"></div>
                                         <div class="input-group">
-                                            <label>Text position</label>
+                                            <label for="textposition">Text position</label>
                                                 <select id="textposition" name="textposition" class="form-control" form="settings">
                                                     <option value="0">Centered in reader window</option>
                                                     <option value="1">Left align text in reader window</option>
@@ -298,7 +298,7 @@
                                             </label>
                                         </div> 
                                         <div class="input-group">
-                                            <label class="checkbox_plain_top" for="checkbox" id="highlightoptimalletterlabel">
+                                            <label class="checkbox_plain_top" for="highlightoptimalletter" id="highlightoptimalletterlabel">
                                             <input type="checkbox" id="highlightoptimalletter">
                                             Highlight optimal letter (choose below)
                                             </label>

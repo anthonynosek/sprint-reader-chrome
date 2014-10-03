@@ -43,60 +43,60 @@
 		</div>
             <div class="controls">
                 <div id="advanced-setting">
-                    <label>Static focal character code</label>
+                    <label for="staticfocalunicode">Static focal character code</label>
                     <div class="input-group">
                     <input id="staticfocalunicode" type="text" class="form-control" placeholder="">
                     </div>
                 </div>
-                <label class="checkbox_plain" for="checkbox" id="lblenablespacecharacterinsertion">
+                <label class="checkbox_plain" for="enablespacecharacterinsertion" id="lblenablespacecharacterinsertion">
                 <input type="checkbox" id="enablespacecharacterinsertion">
                 Enable 'space character' insertion after separator detection
                 </label>
-                <label class="checkbox_plain" for="checkbox" id="lblremovelastslideifnullorempty">
+                <label class="checkbox_plain" for="removelastslideifnullorempty" id="lblremovelastslideifnullorempty">
                 <input type="checkbox" id="removelastslideifnullorempty">
                 Remove last slide if null or empty
                 </label>
-                <label class="checkbox_plain" for="checkbox" id="lblenabledhyphenatedwordsplit">
+                <label class="checkbox_plain" for="enabledhyphenatedwordsplit" id="lblenabledhyphenatedwordsplit">
                 <input type="checkbox" id="enabledhyphenatedwordsplit">
                 Enable hyphenated word split <em>(1)</em>
                 </label>
-                <label class="checkbox_plain" for="checkbox" id="lblconsolidatesinglehyphenatedword">
+                <label class="checkbox_plain" for="consolidatesinglehyphenatedword" id="lblconsolidatesinglehyphenatedword">
                 <input type="checkbox" id="consolidatesinglehyphenatedword">
                 Consolidate single hyphenated word into single word <em>(1)</em>
                 </label>
-                <label class="checkbox_plain" for="checkbox" id="lblenablehyphenationoflongerwords">
+                <label class="checkbox_plain" for="enablehyphenationoflongerwords" id="lblenablehyphenationoflongerwords">
                 <input type="checkbox" id="enablehyphenationoflongerwords">
                 Enable hyphenation of longer words <em>(1)</em>
                 </label>
                 <div id="advanced-setting-sub">                    
-                    <label>- Long word character count trigger (<b>></b>)</label>
+                    <label for="longwordcharactercounttrigger">- Long word character count trigger (<b>></b>)</label>
                     <div class="input-group">
                     <input id="longwordcharactercounttrigger" type="number" class="form-control" placeholder="1">
                     </div>                    
-                    <label>- Minimum long word character count per slide- post split</label>
+                    <label for="longwordcharacterperslidecountpostsplit">- Minimum long word character count per slide- post split</label>
                     <div class="input-group">
                     <input id="longwordcharacterperslidecountpostsplit" type="number" class="form-control" placeholder="1">
                     </div>                    
-                    <label>- Long word last slide character count trigger do not join with previous (<b><=</b>)</label>
+                    <label for="longwordlastslidecharactercount">- Long word last slide character count trigger do not join with previous (<b><=</b>)</label>
                     <div class="input-group">
                     <input id="longwordlastslidecharactercount" type="number" class="form-control" placeholder="1">
                     </div>
                 </div>
-                <label class="checkbox_plain" for="checkbox"><em>(1) Not applicable when chunking size > 1</em></label>
-                <label class="checkbox_plain" for="checkbox" id="lblenableacronymdetection">
+                <label class="checkbox_plain" for="enableacronymdetection"><em>(1) Not applicable when chunking size > 1</em></label>
+                <label class="checkbox_plain" for="enableacronymdetection" id="lblenableacronymdetection">
                 <input type="checkbox" id="enableacronymdetection">
                 Enable acronym detection
                 </label>
-                <label class="checkbox_plain" for="checkbox" id="lblenablenumberanddecimaldetection">
+                <label class="checkbox_plain" for="enablenumberanddecimaldetection" id="lblenablenumberanddecimaldetection">
                 <input type="checkbox" id="enablenumberanddecimaldetection">
                 Enable number and decimal detection
                 </label>
-                <label class="checkbox_plain" for="checkbox" id="lbldeleteemtpyslides">
+                <label class="checkbox_plain" for="deleteemtpyslides" id="lbldeleteemtpyslides">
                 <input type="checkbox" id="deleteemtpyslides">
                 Delete empty slides
                 </label>
                 <div id="advanced-setting">                    
-                	<label>Words per minute (WPM) adjustment step (Shortcut keys '<b>Z</b>' and '<b>X</b>')</label>
+                	<label fpr="wpmadjustmentstep">Words per minute (WPM) adjustment step (Shortcut keys '<b>Z</b>' and '<b>X</b>')</label>
                 	<div class="input-group">
                 	<input id="wpmadjustmentstep" type="number" class="form-control" placeholder="25">
                 </div>
@@ -110,7 +110,7 @@
         	<div class="alert alert-success"><b>Algorithm Settings: Basic</b></div>
         </div>
         	<div id="advanced-setting">                    
-                <label>Minimum slide duration (ms)</label>
+                <label for="basicminimumslideduration">Minimum slide duration (ms)</label>
                 <div class="input-group">
                 <input id="basicminimumslideduration" type="number" class="form-control" placeholder="0">
                 </div>
@@ -123,7 +123,7 @@
         	<div class="alert alert-success"><b>Algorithm Settings: Word Length</b></div>
         </div>
         	<div id="advanced-setting">                    
-                <label>Minimum slide duration (ms)</label>
+                <label for="wordlengthminimumslideduration">Minimum slide duration (ms)</label>
                 <div class="input-group">
                 <input id="wordlengthminimumslideduration" type="number" class="form-control" placeholder="0">
                 </div>
@@ -136,65 +136,65 @@
         	<div class="alert alert-success"><b>Display Settings</b></div>
         </div>
             <div class="controls">
-                <label class="checkbox_plain" for="checkbox" id="lblalwayshidefocalguide">
+                <label class="checkbox_plain" for="alwayshidefocalguide" id="lblalwayshidefocalguide">
                 <input type="checkbox" id="alwayshidefocalguide">
                 Always hide focal guide
                 </label>
 	            <div id="advanced-setting">                    
-                    <label>Optimal positioning left margin percent of screen width</label>
+                    <label for="optleftmarginpercent">Optimal positioning left margin percent of screen width</label>
                     <div class="input-group">
                     <input id="optleftmarginpercent" type="number" class="form-control" placeholder="30">
                     </div>
                 </div>
-                <label class="checkbox_plain" for="checkbox" id="lblshowsentence">
+                <label class="checkbox_plain" for="showsentence" id="lblshowsentence">
                 <input type="checkbox" id="showsentence">
                 Display sentence when paused
                 </label>
-                <label class="checkbox_plain" for="checkbox" id="lblautohidesentence">
+                <label class="checkbox_plain" for="autohidesentence" id="lblautohidesentence">
                 <input type="checkbox" id="autohidesentence">
                 Auto-hide sentence delay (seconds)
                 </label>
 	            <div id="advanced-setting">                    
-                    <label>Seconds delay before hiding sentence</label>
+                    <label for="autohidesentenceseconds">Seconds delay before hiding sentence</label>
                     <div class="input-group">
                     <input id="autohidesentenceseconds" type="number" class="form-control" placeholder="5">
                     </div>
                 </div>
-                <label class="checkbox_plain" for="checkbox" id="lblshowsentenceborder">
+                <label class="checkbox_plain" for="showsentenceborder" id="lblshowsentenceborder">
                 <input type="checkbox" id="showsentenceborder">
                 Display sentence top border
                 </label>
-                <label class="checkbox_plain" for="checkbox" id="lblsentencereaderopen">
+                <label class="checkbox_plain" for="sentencereaderopen" id="lblsentencereaderopen">
                 <input type="checkbox" id="sentencereaderopen">
                 Display sentence at reader open
                 </label>
                 <div id="advanced-setting">                    
-                    <label>Sentence backword word count</label>
+                    <label for="sentencebackwardwordcount">Sentence backword word count</label>
                     <div class="input-group">
                     <input id="sentencebackwardwordcount" type="number" class="form-control" placeholder="20">
                     </div>
                 </div>
                 <div id="advanced-setting">                    
-                    <label>Pause sentence percent offset</label>
+                    <label for="sentencepositionpercentoffset">Pause sentence percent offset</label>
                     <div class="input-group">
                     <input id="sentencepositionpercentoffset" type="number" class="form-control" placeholder="50">
                     </div>
                 </div>
                 <div id="advanced-setting">                    
-                    <label>Large step (number of slides)</label>
+                    <label for="largestepnumberofslides">Large step (number of slides)</label>
                     <div class="input-group">
                     <input id="largestepnumberofslides" type="number" class="form-control" placeholder="10">
                     </div>
                 </div>
-                <label class="checkbox_plain" for="checkbox" id="lbldisplayprogress">
+                <label class="checkbox_plain" for="displayprogress" id="lbldisplayprogress">
                 <input type="checkbox" id="displayprogress">
                 Display progress bar
                 </label>
-                <label class="checkbox_plain" for="checkbox" id="lbldisplaysocial">
+                <label class="checkbox_plain" for="displaysocial" id="lbldisplaysocial">
                 <input type="checkbox" id="displaysocial">
                 Display social network buttons
                 </label>
-                <label class="checkbox_plain" for="checkbox" id="lbldisplaywpmsummary">
+                <label class="checkbox_plain" for="displaywpmsummary" id="lbldisplaywpmsummary">
                 <input type="checkbox" id="displaywpmsummary">
                 Display WPM/selection summary (top-right corner)
                 </label>              
@@ -206,7 +206,7 @@
         	<div class="alert alert-success"><b>Text Selection</b></div>
         </div>
             <div class="controls">
-                <label class="checkbox_plain" for="checkbox" id="lblenabledautotextselection">
+                <label class="checkbox_plain" for="enableautotextselection" id="lblenabledautotextselection">
                 <input type="checkbox" id="enableautotextselection">
                 Enable automatic text selection (CTRL+ALT Shortcut)
                 </label>               
@@ -217,7 +217,7 @@
         	<div class="alert alert-success"><b>Text Retrieval</b></div>
         </div>
             <div class="controls">
-                <label class="checkbox_plain" for="checkbox" id="lblsaveslideposition">
+                <label class="checkbox_plain" for="saveslideposition" id="lblsaveslideposition">
                 <input type="checkbox" id="saveslideposition">
                 Save slide position on pause and close
                 </label>               
