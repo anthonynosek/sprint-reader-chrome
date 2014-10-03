@@ -921,6 +921,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#ddd');
 			$('.contentall_inner').css('border-color', '#46b8da');
 			colorSentenceBorder = '#ddd';
+			$('.github_logo path').css('fill', 'black');
 		  	break;
 		case 1:
 			// BLACK
@@ -943,6 +944,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#3f3f40');
 			$('.contentall_inner').css('border-color', '#6C6E6F');
 			colorSentenceBorder = '#3f3f40';
+			$('.github_logo path').css('fill', 'white');
 		  	break;
 		case 2:
 			// GREY
@@ -965,6 +967,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#C0C0C0');
 			$('.contentall_inner').css('border-color', '#46b8da');
 			colorSentenceBorder = '#C0C0C0';
+			$('.github_logo path').css('fill', 'black');
 		  	break;
 		case 3:
 			// BLUE
@@ -987,6 +990,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#96b6f1');
 			$('.contentall_inner').css('border-color', '#2955A6');
 			colorSentenceBorder = '#96b6f1';
+			$('.github_logo path').css('fill', '2955A6');
 		  	break;
 		case 4:
 			// PURPLE
@@ -1009,6 +1013,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#9885b8');
 			$('.contentall_inner').css('border-color', '#361A62');
 			colorSentenceBorder = '#9885b8';
+			$('.github_logo path').css('fill', '361A62');
 		  	break;
 		case 5:
 			// GREEN
@@ -1031,6 +1036,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#91c19f');
 			$('.contentall_inner').css('border-color', '#136428');
 			colorSentenceBorder = '#91c19f';
+			$('.github_logo path').css('fill', '136428');
 		  	break;
 		case 6:
 			// HIGH CONTRAST
@@ -1053,6 +1059,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#cfba58');
 			$('.contentall_inner').css('border-color', '#cfba58');
 			colorSentenceBorder = '#cfba58';
+			$('.github_logo path').css('fill', 'cfba58');
 		  	break;
 		case 7:
 			// EL DESIGNO
@@ -1075,6 +1082,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#b9ae66');
 			$('.contentall_inner').css('border-color', '#7e7644');
 			colorSentenceBorder = '#b9ae66';
+			$('.github_logo path').css('fill', 'black');
 		  	break;
 		case 8:
 			// NEUTRAL FARM
@@ -1097,6 +1105,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#b9ae66');
 			$('.contentall_inner').css('border-color', '#c69876');
 			colorSentenceBorder = '#b9ae66';
+			$('.github_logo path').css('fill', 'black');
 		  	break;
 		case 9:
 			// DARK GREY
@@ -1119,6 +1128,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#808082');
 			$('.contentall_inner').css('border-color', '#2d2d2e');
 			colorSentenceBorder = '#808082';
+			$('.github_logo path').css('fill', 'black');
 		  	break;
 		case 10:
 			// DARK PURPLE
@@ -1141,6 +1151,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#8E6F9B');
 			$('.contentall_inner').css('border-color', '#470763');
 			colorSentenceBorder = '#8E6F9B';
+			$('.github_logo path').css('fill', 'white');
 		  	break;
 		case 11:
 			// CHARCOAL
@@ -1163,6 +1174,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#4d4d4d');
 			$('.contentall_inner').css('border-color', '#4d4d4d');
 			colorSentenceBorder = '#4d4d4d';
+			$('.github_logo path').css('fill', 'white');
 		  	break;
 		case 12:
 			// EARTHY GREENS
@@ -1185,6 +1197,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#59812e');
 			$('.contentall_inner').css('border-color', '#59812e');
 			colorSentenceBorder = '#59812e';
+			$('.github_logo path').css('fill', '59812e');
 		  	break;
 		case 13:
 			// PURDY PINK
@@ -1207,6 +1220,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#facfea');
 			$('.contentall_inner').css('border-color', '#f866c3');
 			colorSentenceBorder = '#f866c3';
+			$('.github_logo path').css('fill', 'black');
 		  	break;
 		case 14:
 			// OLIVE BRANCH
@@ -1229,6 +1243,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#a69546');
 			$('.contentall_inner').css('border-color', '#bf3211');
 			colorSentenceBorder = '#bf3211';
+			$('.github_logo path').css('fill', 'bf3211');
 		  	break;
 		case 15:
 			// TOKYO
@@ -1251,6 +1266,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#48371d');
 			$('#contentall_inner').css('border-color', '#ed2645');
 			colorSentenceBorder = '#48371d';
+			$('.github_logo path').css('fill', 'black');
 		  	break;
 	}
 	

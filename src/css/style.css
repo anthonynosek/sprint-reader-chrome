@@ -316,6 +316,16 @@ label {
 	/* margin: 5px; */
 }
 
+.github {
+	position: relative;
+	float: left;
+	margin: 12px 8px 0px 0px;	
+}
+
+.github_logo path {
+	fill: black;
+}
+
 .cp-small {
 	/*background-color: rgb(226, 226, 226); !important;*/
 	margin-left: 35px;
