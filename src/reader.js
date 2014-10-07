@@ -68,6 +68,7 @@ var divProgressUpdate
 var colorScheme = 0;
 var colorSchemeName;
 var colorSentenceBorder;
+var colorGithubIcon;
 
 // Refers to the selected text item
 // This is used to manage selected text history
@@ -95,6 +96,8 @@ function init() {
 	loadHeavyJavascriptInBackground();
 	// Load the reader window
 	loadReader();
+	// Insert any SVG images
+	insertSVG();
 }
 
 function loadReader() {
@@ -898,6 +901,7 @@ function setColourPickerDisplay(hex) {
 }
 
 function setColorScheme(scheme) {
+	//console.log("Colour scheme (set): " + scheme)
 	switch(scheme)
 	{
 		case 0:
@@ -918,10 +922,9 @@ function setColorScheme(scheme) {
 			$('.btn-info').css('border-color', '#46b8da');
 			$('.btn-info > .caret').css('border-top-color', 'white');
 			$('.progress-bar-info').css('background-color', '#5bc0de');
-			$('.input-column-right').css('border-left-color', '#ddd');
-			$('.contentall_inner').css('border-color', '#46b8da');
-			colorSentenceBorder = '#ddd';
-			$('.github_logo path').css('fill', 'black');
+			$('.input-column-right').css('border-left-color', '#ddd');	
+			colorSentenceBorder = '#ddd';	
+			colorGithubIcon = '#46b8da';		
 		  	break;
 		case 1:
 			// BLACK
@@ -944,7 +947,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#3f3f40');
 			$('.contentall_inner').css('border-color', '#6C6E6F');
 			colorSentenceBorder = '#3f3f40';
-			$('.github_logo path').css('fill', 'white');
+			colorGithubIcon = 'white';				
 		  	break;
 		case 2:
 			// GREY
@@ -967,7 +970,7 @@ function setColorScheme(scheme) {
 			$('.input-column-right').css('border-left-color', '#C0C0C0');
 			$('.contentall_inner').css('border-color', '#46b8da');
 			colorSentenceBorder = '#C0C0C0';
-			$('.github_logo path').css('fill', 'black');
+			colorGithubIcon = 'black';				
 		  	break;
 		case 3:
 			// BLUE
@@ -989,8 +992,8 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#325BDB');
 			$('.input-column-right').css('border-left-color', '#96b6f1');
 			$('.contentall_inner').css('border-color', '#2955A6');
-			colorSentenceBorder = '#96b6f1';
-			$('.github_logo path').css('fill', '2955A6');
+			colorSentenceBorder = '#96b6f1';	
+			colorGithubIcon = '#2955A6';			
 		  	break;
 		case 4:
 			// PURPLE
@@ -1012,8 +1015,9 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#762496');
 			$('.input-column-right').css('border-left-color', '#9885b8');
 			$('.contentall_inner').css('border-color', '#361A62');
-			colorSentenceBorder = '#9885b8';
-			$('.github_logo path').css('fill', '361A62');
+			$('.github_logo path').css('fill', '#361A62');
+			colorSentenceBorder = '#9885b8';	
+			colorGithubIcon = black;			
 		  	break;
 		case 5:
 			// GREEN
@@ -1035,8 +1039,8 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#33751E');
 			$('.input-column-right').css('border-left-color', '#91c19f');
 			$('.contentall_inner').css('border-color', '#136428');
-			colorSentenceBorder = '#91c19f';
-			$('.github_logo path').css('fill', '136428');
+			colorSentenceBorder = '#91c19f';		
+			colorGithubIcon = '#136428';		
 		  	break;
 		case 6:
 			// HIGH CONTRAST
@@ -1058,8 +1062,8 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#cfba58');
 			$('.input-column-right').css('border-left-color', '#cfba58');
 			$('.contentall_inner').css('border-color', '#cfba58');
-			colorSentenceBorder = '#cfba58';
-			$('.github_logo path').css('fill', 'cfba58');
+			colorSentenceBorder = '#cfba58';	
+			colorGithubIcon = '#cfba58';			
 		  	break;
 		case 7:
 			// EL DESIGNO
@@ -1081,8 +1085,8 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#73afb6');
 			$('.input-column-right').css('border-left-color', '#b9ae66');
 			$('.contentall_inner').css('border-color', '#7e7644');
-			colorSentenceBorder = '#b9ae66';
-			$('.github_logo path').css('fill', 'black');
+			colorSentenceBorder = '#b9ae66';		
+			colorGithubIcon = 'black';		
 		  	break;
 		case 8:
 			// NEUTRAL FARM
@@ -1104,8 +1108,8 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#c69876');
 			$('.input-column-right').css('border-left-color', '#b9ae66');
 			$('.contentall_inner').css('border-color', '#c69876');
-			colorSentenceBorder = '#b9ae66';
-			$('.github_logo path').css('fill', 'black');
+			colorSentenceBorder = '#b9ae66';	
+			colorGithubIcon = 'black';			
 		  	break;
 		case 9:
 			// DARK GREY
@@ -1127,8 +1131,8 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#2d2d2e');
 			$('.input-column-right').css('border-left-color', '#808082');
 			$('.contentall_inner').css('border-color', '#2d2d2e');
-			colorSentenceBorder = '#808082';
-			$('.github_logo path').css('fill', 'black');
+			colorSentenceBorder = '#808082';	
+			colorGithubIcon = 'black';			
 		  	break;
 		case 10:
 			// DARK PURPLE
@@ -1150,8 +1154,8 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#8E6F9B');
 			$('.input-column-right').css('border-left-color', '#8E6F9B');
 			$('.contentall_inner').css('border-color', '#470763');
-			colorSentenceBorder = '#8E6F9B';
-			$('.github_logo path').css('fill', 'white');
+			colorSentenceBorder = '#8E6F9B';	
+			colorGithubIcon = 'white';			
 		  	break;
 		case 11:
 			// CHARCOAL
@@ -1173,8 +1177,8 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#4d4d4d');
 			$('.input-column-right').css('border-left-color', '#4d4d4d');
 			$('.contentall_inner').css('border-color', '#4d4d4d');
-			colorSentenceBorder = '#4d4d4d';
-			$('.github_logo path').css('fill', 'white');
+			colorSentenceBorder = '#4d4d4d';	
+			colorGithubIcon = 'white';			
 		  	break;
 		case 12:
 			// EARTHY GREENS
@@ -1196,8 +1200,8 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#59812e');
 			$('.input-column-right').css('border-left-color', '#59812e');
 			$('.contentall_inner').css('border-color', '#59812e');
-			colorSentenceBorder = '#59812e';
-			$('.github_logo path').css('fill', '59812e');
+			colorSentenceBorder = '#59812e';	
+			colorGithubIcon = '#59812e';			
 		  	break;
 		case 13:
 			// PURDY PINK
@@ -1219,8 +1223,8 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#f996d5');
 			$('.input-column-right').css('border-left-color', '#facfea');
 			$('.contentall_inner').css('border-color', '#f866c3');
-			colorSentenceBorder = '#f866c3';
-			$('.github_logo path').css('fill', 'black');
+			colorSentenceBorder = '#f866c3';			
+			colorGithubIcon = 'black';	
 		  	break;
 		case 14:
 			// OLIVE BRANCH
@@ -1242,8 +1246,8 @@ function setColorScheme(scheme) {
 			$('.progress-bar-info').css('background-color', '#bf3211');
 			$('.input-column-right').css('border-left-color', '#a69546');
 			$('.contentall_inner').css('border-color', '#bf3211');
-			colorSentenceBorder = '#bf3211';
-			$('.github_logo path').css('fill', 'bf3211');
+			colorSentenceBorder = '#bf3211';		
+			colorGithubIcon = '#bf3211';		
 		  	break;
 		case 15:
 			// TOKYO
@@ -1264,13 +1268,14 @@ function setColorScheme(scheme) {
 			$('.btn-info > .caret').css('border-top-color', '#48371d');
 			$('.progress-bar-info').css('background-color', '#ed2645');
 			$('.input-column-right').css('border-left-color', '#48371d');
-			$('#contentall_inner').css('border-color', '#ed2645');
-			colorSentenceBorder = '#48371d';
-			$('.github_logo path').css('fill', 'black');
+			$('.contentall_inner').css('border-color', '#ed2645');
+			colorSentenceBorder = '#48371d';			
+			colorGithubIcon = 'black';	
 		  	break;
 	}
 	
 	$('.tab-content').css('border-bottom', '0px');
+	$('.github_logo path').css('fill', colorSentenceBorder);
 }
 
 // Play the selected text countdown
