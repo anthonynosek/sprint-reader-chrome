@@ -40,8 +40,6 @@ function openReaderWindowFromContext(context) {
 }
 
 function openReaderWindowFromShortcut(selectedText, haveSelection, dirRTL) {
-	// Save the selected text to local storage
-	var selectedText = context.selectionText;
 	var selectedTextEncoded = htmlEntitiesEncode(selectedText);
 	saveSelectedTextToResource(selectedTextEncoded);
 	localStorage.setItem("selectedText", selectedTextEncoded);
