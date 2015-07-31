@@ -78,14 +78,14 @@ function openReaderWindow() {
 }
 
 function openReader(url, title, w, h, t, l) {
-	// Only open a new window if one does not already exist	
+	// Only open a new window if one does not already exist
 	if (readerWindow == null) {
 		// Open a new reader
 		readerWindow = window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+t+', left='+l);
 	}
 	else {
 		// Refresh the existing reader window
-		readerWindow.refreshReader();	
+		readerWindow.refreshReader();
 		readerWindow.focus();
 	}
 
