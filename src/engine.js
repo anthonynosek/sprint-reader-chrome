@@ -1,8 +1,8 @@
-//------------------------------------------------------------------------------
+﻿//------------------------------------------------------------------------------
 //
 // 	SPRINT READER
 //	Speed Reading Extension for Google Chrome
-//	Copyright (c) 2013-2014, Anthony Nosek
+//	Copyright (c) 2013-2015, Anthony Nosek
 //	https://github.com/anthonynosek/sprint-reader-chrome/blob/master/LICENSE
 //
 //------------------------------------------------------------------------------
@@ -875,7 +875,7 @@ function getTextArrayWordFreq(selectedText, chunkSize) {
 // Sets the individual timing for the selected text array based on Information Theory.
 // This works based on how much of a surprise (information content) it is for the reader
 // to encounter a certain word/phrase in the sentence. For simplicity, we assume the given context/sentence has
-// the same probability model as in the "WordFreq_en-US.js" file, which is based on movie subtitles. We do this
+// the same probability model as in the "wordfrequency-en-US.js" file, which is based on movie subtitles. We do this
 // since that is the data we have to work with.
 // Notes:
 // 1. Currently, only 1 word slides are supported. This is because the probability data we have pertains to single words.
@@ -892,10 +892,10 @@ function getTextArrayWordFreq(selectedText, chunkSize) {
 //    as an unknown word, and so will be displayed for a longer period of time, while 'I' will appear
 //    for a very short period of time. Also, 'This' will appear for longer, while 'this' will be fast. But
 //    note that 'Maybe' is more common, and so will be fast, while 'maybe' is less common and so will be displayed
-//    longer. Check the 'WordFreq_en-US.js' file compiled from its underlying database source at:
+//    longer. Check the 'wordfrequency-en-US.js' file compiled from its underlying database source at:
 //    http://www.ugent.be/pp/experimentele-psychologie/en/research/documents/subtlexus/subtlexus2.zip
 // 
-// 4. The Shannon information calculation should be moved into the 'WordFreq_en-US.js' file, to save the
+// 4. The Shannon information calculation should be moved into the 'wordfrequency-en-US.js' file, to save the
 //    machine from having to calculate them each time.
 // 
 // 5. In the future, different contexts can be used as if they are refined languages, and refined
@@ -916,11 +916,12 @@ function getTextArrayWordFreqTiming(textData) {
 		bitsOfInformation = -Math.log2(wordProbability[t.text]); // the Shannon information content definition
 		
 		// linear interpolation: 4.5 bits -> durShort msec, 25.6 bits -> durLong msec
-		const lowInfo = 4.5; const highInfo = 25.6; // this numbers are empirical and are taken from the en-US database.
-		var durShort = madvWordFreqHighestFreqSlideDuration; const durLong = madvWordFreqLowestFreqSlideDuration;
+		var lowInfo = 4.5; var highInfo = 25.6; // this numbers are empirical and are taken from the en-US database.	
+		var durShort = madvWordFreqHighestFreqSlideDuration; 
+		var durLong = madvWordFreqLowestFreqSlideDuration;
 		
-		const a = (durLong - durShort)/(highInfo - lowInfo);
-		const b = durShort - lowInfo*a;
+		var a = (durLong - durShort)/(highInfo - lowInfo);
+		var b = durShort - lowInfo*a;
 		
 		if (!bitsOfInformation) bitsOfInformation = highInfo; // the maximum
 		

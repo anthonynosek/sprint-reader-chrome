@@ -2,7 +2,7 @@
 //
 // 	SPRINT READER
 //	Speed Reading Extension for Google Chrome
-//	Copyright (c) 2013-2014, Anthony Nosek
+//	Copyright (c) 2013-2015, Anthony Nosek
 //	https://github.com/anthonynosek/sprint-reader-chrome/blob/master/LICENSE
 //
 //------------------------------------------------------------------------------
@@ -119,23 +119,25 @@ function saveMoreAdvancedSettings() {
 		madvWordLengthMinimumSlideDuration = NEWmadvWordLengthMinimumSlideDuration;
 	}
 	
-// Word Frequency Algorithm Advanced Settings
+	// Word Frequency Algorithm Advanced Settings
 	var NEWmadvWordFreqMinimumSlideDuration = document.getElementById('wordfreqminimumslideduration').value;
 	if (!isNaN(NEWmadvWordFreqMinimumSlideDuration)) {
 		localStorage.setItem("madvWordFreqMinimumSlideDuration", NEWmadvWordFreqMinimumSlideDuration);
 		madvWordFreqMinimumSlideDuration = NEWmadvWordFreqMinimumSlideDuration;
 	}
+	
 	var NEWmadvWordFreqHighestFreqSlideDuration = document.getElementById('wordfreqhighestfreqslideduration').value;
 	if (!isNaN(NEWmadvWordFreqHighestFreqSlideDuration)) {
 		localStorage.setItem("madvWordFreqHighestFreqSlideDuration", NEWmadvWordFreqHighestFreqSlideDuration);
 		madvWordFreqHighestFreqSlideDuration = NEWmadvWordFreqHighestFreqSlideDuration;
 	}
+	
 	var NEWmadvWordFreqLowestFreqSlideDuration = document.getElementById('wordfreqlowestfreqslideduration').value;
 	if (!isNaN(NEWmadvWordFreqLowestFreqSlideDuration)) {
 		localStorage.setItem("madvWordFreqLowestFreqSlideDuration", NEWmadvWordFreqLowestFreqSlideDuration);
 		madvWordFreqLowestFreqSlideDuration = NEWmadvWordFreqLowestFreqSlideDuration;
 	}
-// end (Word Frequency Algorithm Advanced Settings)
+	// end (Word Frequency Algorithm Advanced Settings)
 	
 	var NEWmadvAlwaysHideFocalGuide = document.getElementById('alwayshidefocalguide').checked;
 	localStorage.setItem("madvAlwaysHideFocalGuide", NEWmadvAlwaysHideFocalGuide);

@@ -25,6 +25,11 @@ input[type="number"] {
 	margin-bottom: 8px;
 }
 
+.input-group-wide-width {
+	width: 400px;
+	margin-bottom: 8px;	
+}
+
 .input-column-container {
 	float: left;
 	width: 100%;
@@ -208,7 +213,7 @@ label {
 	width:100%;
 	font-size: 12px;
 	text-align: right;
-	margin: 0px;
+	margin: 0px;	
 }
 
 #status p {

@@ -4,7 +4,7 @@
 
 <a href="http://tinyurl.com/lggjhxr">**Sprint Reader**</a> is an easy to use (Google Chrome) speed reading extension. 
 
-> Current (stable) version: 2.0.0
+> Current (stable) version: 2.2.0
 
 Simply select text on a webpage, right-click and select `Sprint read selected text` from the menu. This will launch the reader window, the selected text is displayed word-by-word in a fixed focal position. The duration of each slide is calculated based upon a word-per-minute (WPM) setting.
 

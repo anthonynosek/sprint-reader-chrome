@@ -2,7 +2,7 @@
 //
 // 	SPRINT READER
 //	Speed Reading Extension for Google Chrome
-//	Copyright (c) 2013-2014, Anthony Nosek
+//	Copyright (c) 2013-2015, Anthony Nosek
 //	https://github.com/anthonynosek/sprint-reader-chrome/blob/master/LICENSE
 //
 //------------------------------------------------------------------------------
@@ -644,9 +644,11 @@ function insertSVG() {
 	});
 }
 
+// --------------------------------------------------
+// Load a script passed in via URL parameter
 function loadScript(url, callback)
 {
-    // Adding the script tag to the head as suggested before
+    // Adding the script tag to the head of the document
     var head = document.getElementsByTagName('head')[0];
     var script = document.createElement('script');
     script.type = 'text/javascript';

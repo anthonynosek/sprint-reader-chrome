@@ -2,7 +2,7 @@
 //
 // 	SPRINT READER
 //	Speed Reading Extension for Google Chrome
-//	Copyright (c) 2013-2014, Anthony Nosek
+//	Copyright (c) 2013-2015, Anthony Nosek
 //	https://github.com/anthonynosek/sprint-reader-chrome/blob/master/LICENSE
 //
 //------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ var strPlay = "Play";
 var divPlay;
 var divWord;
 var divProgress;
-var divProgressUpdate
+var divProgressUpdate;
 
 // Color scheme used for the extension
 //	0 = Default (White)
@@ -96,7 +96,7 @@ function init() {
 	loadHeavyJavascriptInBackground();
 
 	// wait for frequency data to load
-	loadScript("data/WordFreq_en-US.js", function()
+	loadScript("data/wordfrequency-en-US.js", function()
 	{
 		// continue loading the reader window
 
@@ -105,6 +105,7 @@ function init() {
 
 		// Insert any SVG images
 		insertSVG();
+		showFocalGuide();
 	});
 }
 
@@ -169,7 +170,7 @@ function loadReader() {
 		displayAllContentInViewer(selectedText);	
 		
 		// Group the words depending upon the chunk size set
-		textArray = getTextArray(selectedAlgorithm, selectedText, chunkSize)	
+		textArray = getTextArray(selectedAlgorithm, selectedText, chunkSize);	
 		
 		// Set the display of the status
 		displayStatusData(selectedText);
@@ -217,7 +218,7 @@ function loadReader() {
 			
 		// Setup the slide tooltip
 		// This has to be called before setEventListeners
-		setupSlideTooltip()
+		setupSlideTooltip();
 		
 		// Add event listeners 
 		setEventListeners();
