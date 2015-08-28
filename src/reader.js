@@ -2,7 +2,7 @@
 //
 // 	SPRINT READER
 //	Speed Reading Extension for Google Chrome
-//	Copyright (c) 2013-2014, Anthony Nosek
+//	Copyright (c) 2013-2015, Anthony Nosek
 //	https://github.com/anthonynosek/sprint-reader-chrome/blob/master/LICENSE
 //
 //------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ var strPlay = "Play";
 var divPlay;
 var divWord;
 var divProgress;
-var divProgressUpdate
+var divProgressUpdate;
 
 // Color scheme used for the extension
 //	0 = Default (White)
@@ -94,10 +94,19 @@ var sentenceTimer;
 function init() {
 	// Load javascript
 	loadHeavyJavascriptInBackground();
-	// Load the reader window
-	loadReader();
-	// Insert any SVG images
-	insertSVG();
+
+	// wait for frequency data to load
+	loadScript("data/wordfrequency-en-US.js", function()
+	{
+		// continue loading the reader window
+
+		// Load the reader window
+		loadReader();
+
+		// Insert any SVG images
+		insertSVG();
+		showFocalGuide();
+	});
 }
 
 function loadReader() {
@@ -138,7 +147,7 @@ function loadReader() {
 		setFocalCharacter();
 		
 		// Setup the colour picker
-		setColourPicker();	
+		setColourPicker();
 		
 		// Set the font properties, color scheme and display properties
 		setFontProperties();
@@ -161,7 +170,7 @@ function loadReader() {
 		displayAllContentInViewer(selectedText);	
 		
 		// Group the words depending upon the chunk size set
-		textArray = getTextArray(selectedAlgorithm, selectedText, chunkSize)	
+		textArray = getTextArray(selectedAlgorithm, selectedText, chunkSize);	
 		
 		// Set the display of the status
 		displayStatusData(selectedText);
@@ -209,7 +218,7 @@ function loadReader() {
 			
 		// Setup the slide tooltip
 		// This has to be called before setEventListeners
-		setupSlideTooltip()
+		setupSlideTooltip();
 		
 		// Add event listeners 
 		setEventListeners();
@@ -1346,17 +1355,17 @@ function textPlay() {
 		setProgress(0);	
 		stopSlideShow = false;
 		playingText = true;	
-		changePlayButtonText(strPause);	
+		changePlayButtonText(strPause);
 		divWord.innerHTML = textArray[0].text;
 		textItemType = 1;
-		setTimeout(playSlideShow, 1000);			
+		setTimeout(playSlideShow, 1000);
 	}
 	// User has commenced normal playback of text
 	else if (!playingText) {
 		changePlayButtonText(strPause);
 		stopSlideShow = false;
-		playingText = true;	
-		playSlideShow();		
+		playingText = true;
+		playSlideShow();
 	}
 	// User was playing text and has instructed to pause
 	else {

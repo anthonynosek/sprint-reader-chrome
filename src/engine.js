@@ -1,8 +1,8 @@
-//------------------------------------------------------------------------------
+﻿//------------------------------------------------------------------------------
 //
 // 	SPRINT READER
 //	Speed Reading Extension for Google Chrome
-//	Copyright (c) 2013-2014, Anthony Nosek
+//	Copyright (c) 2013-2015, Anthony Nosek
 //	https://github.com/anthonynosek/sprint-reader-chrome/blob/master/LICENSE
 //
 //------------------------------------------------------------------------------
@@ -22,6 +22,7 @@ var textItemIndex = 0;
 // please refer to the function header text
 //		0 = BASIC 
 //		1 = WORDLENGTH
+//		2 = WORDFREQ
 var selectedAlgorithm = 0;
 var selectedAlgorithmName = "basic";
 
@@ -119,6 +120,11 @@ function getTextArray(algorithm, selectedText, chunkSize) {
 	  		tArray = getTextArrayWordLength(selectedText, chunkSize);
 			getTextArrayWordLengthTiming(tArray);
 			break;
+		case 2:
+			selectedAlgorithmName = "word frequency";
+			tArray = getTextArrayWordFreq(selectedText, chunkSize);
+			getTextArrayWordFreqTiming(tArray);
+			break;
 		default:
 			selectedAlgorithmName = "basic";
 	  		tArray = getTextArrayBasic(selectedText, chunkSize);
@@ -136,10 +142,12 @@ function getTextArrayTiming(algorithm, textData) {
 	switch(algorithm)
 	{
 		case 1:
-	  		getTextArrayWordLengthTiming(textData);
+			getTextArrayWordLengthTiming(textData);
 			break;
+		case 2:
+			getTextArrayWordFreqTiming(textData);
 		default:
-	  		getTextArrayBasicTiming(textData);
+			getTextArrayBasicTiming(textData);
 	}
 	
 	displayStatistics(textData);
@@ -847,6 +855,81 @@ function getTextArrayWordLengthTiming(textData) {
     	t.duration = unitTime * t.text.length;
 		// Ensure we observe the minimum slide duration setting
 		if (t.duration < madvWordLengthMinimumSlideDuration) t.duration = madvWordLengthMinimumSlideDuration;	
+		// Enable this to get a log of the textItem
+		//console.log("text: " + textData[i].text + " (" + textData[i].predelay + ", " + textData[i].duration + ", " + textData[i].postdelay + ")");
+	}
+}
+
+// --------------------------------------------------
+// SPLIT TEXT (WORD FREQ)
+// This is the word freq split text algorithm.
+//
+// Text is split by space character and then sorted  
+// into chunks based on the chunk size setting.
+//
+function getTextArrayWordFreq(selectedText, chunkSize) {
+	// The text is split using the basic algorithm which
+	return getTextArrayBasic(selectedText, chunkSize);
+}
+
+// Sets the individual timing for the selected text array based on Information Theory.
+// This works based on how much of a surprise (information content) it is for the reader
+// to encounter a certain word/phrase in the sentence. For simplicity, we assume the given context/sentence has
+// the same probability model as in the "wordfrequency-en-US.js" file, which is based on movie subtitles. We do this
+// since that is the data we have to work with.
+// Notes:
+// 1. Currently, only 1 word slides are supported. This is because the probability data we have pertains to single words.
+//    Joint probabilities can be calculate as a simple extension of this for segments (=phrases=multi word slides).
+//    The best would be to have a multi-word phrase database, for more a accurate probability model for segments.
+//    P('word1 word2') approx= P('word1')*P('word2') =>
+//    shannonInfo('word1 word2') approx= shannonInfo('word1') + shannonInfo('word2')
+// 
+// 2. Only en-US is currently supported. More languages would require more databases.
+// 
+// 3. A subtle point is that of case sensitivity. This IS case-sensitive on purpose. The assumption
+//    is that the brain reads 'I' faster than 'i', since 'I' is more commonly encountered. The database
+//    reflects this, by using the most common letter casing in it. This means, for example, 'i' would be treated
+//    as an unknown word, and so will be displayed for a longer period of time, while 'I' will appear
+//    for a very short period of time. Also, 'This' will appear for longer, while 'this' will be fast. But
+//    note that 'Maybe' is more common, and so will be fast, while 'maybe' is less common and so will be displayed
+//    longer. Check the 'wordfrequency-en-US.js' file compiled from its underlying database source at:
+//    http://www.ugent.be/pp/experimentele-psychologie/en/research/documents/subtlexus/subtlexus2.zip
+// 
+// 4. The Shannon information calculation should be moved into the 'wordfrequency-en-US.js' file, to save the
+//    machine from having to calculate them each time.
+// 
+// 5. In the future, different contexts can be used as if they are refined languages, and refined
+//    probability model databases can be used to reflect that difference.
+// 
+// 6. Duration smoothing should be experimented with. This means smoothing/anti-aliasing the following function:
+//    slideDuration(slide #)
+//    This might help the brain anticipate the amount of time between successive words in a sentence.
+// Author: Nir (geb-braid @ github.com)
+// 
+function getTextArrayWordFreqTiming(textData) {
+	// Bail if we don't have a textArray
+	if (textData == null || textData.length <= 0) return;
+	
+	// Set the individual timing based on the Shannon information content of the word
+	for (var i = 0; i < textData.length; i++) {
+		var t = textData[i];
+		bitsOfInformation = -Math.log2(wordProbability[t.text]); // the Shannon information content definition
+		
+		// linear interpolation: 4.5 bits -> durShort msec, 25.6 bits -> durLong msec
+		var lowInfo = 4.5; var highInfo = 25.6; // this numbers are empirical and are taken from the en-US database.	
+		var durShort = madvWordFreqHighestFreqSlideDuration; 
+		var durLong = madvWordFreqLowestFreqSlideDuration;
+		
+		var a = (durLong - durShort)/(highInfo - lowInfo);
+		var b = durShort - lowInfo*a;
+		
+		if (!bitsOfInformation) bitsOfInformation = highInfo; // the maximum
+		
+		t.duration = a * bitsOfInformation + b; // Linear interpolation. Note: this means WPM setting has no role in this algorithm.
+		
+		// Ensure we observe the minimum slide duration setting
+		if (t.duration < madvWordFreqMinimumSlideDuration) t.duration = madvWordFreqMinimumSlideDuration;
+		
 		// Enable this to get a log of the textItem
 		//console.log("text: " + textData[i].text + " (" + textData[i].predelay + ", " + textData[i].duration + ", " + textData[i].postdelay + ")");
 	}

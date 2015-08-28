@@ -35,18 +35,18 @@
 			<a href="https://github.com/anthonynosek/sprint-reader-chrome" target="_blank"><img class="svg github_logo" src="graphics/github-mark-16px.svg"></a>
         </div>
     	<div class="google">
-			<g:follow href="https://plus.google.com/u/0/b/105075625257906831241" rel="author"></g:follow>
+			<div class="g-follow" data-href="https://plus.google.com/u/0/b/105075625257906831241" data-rel="author"></div>
         </div>
         <div class="facebook">
         	<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSprintReader&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px; width:100px; margin-top:10px" allowTransparency="true"></iframe>
         </div>
    	</div>
-                    	
+	
 	<div class="tabbable">
 		<div class="tab-content">
 			<div id="tab1" class="tab-pane active">
 				<!-- This is the main screen container -->
-				<div id="container">               
+				<div id="container">
 					<div id="controls">
 						<div class="btn-group"> 
 							<button id="btnPlay"  type="button" class="btn btn-info" >Play</button>
@@ -70,20 +70,20 @@
 								<div id="progress-indicator" class="progress-bar progress-bar-info" style="width: 0%">
 								</div>
 							</div>
-						</div>						
+						</div>
 					</div>
-                    		
+                    
                     <div id="status">
 						<span id="statuslabel" class="label label-info">--------</span>
-					</div>                    
+					</div>
                     
 					<div id="word-container"></canvas>  
-	                  	<div id="focal-guide" class="top"></div>           	
+	                  	<div id="focal-guide" class="top"></div>
 						<!-- The span ensures the text is centered vertically -->
 						<span><h1 id="word"></h1></span>
-                        <div id="focal-guide" class="bottom"></div>                        
-					</div>                                       
-                    <canvas id="word-canvas" width="0" height="0"></canvas>                    
+                        <div id="focal-guide" class="bottom"></div>
+					</div>
+                    <canvas id="word-canvas" width="0" height="0"></canvas>
 					
                     <div id="sentence_outer"><div id="sentence_inner">
                     	<div id="sentence">
@@ -96,15 +96,15 @@
             <div id="tab2" class="tab-pane">
 				<!-- This is the selected text content container -->
 				<div id="container">
-					<div id="spacer"></div>	
+					<div id="spacer"></div>
                     <div id="heading"><b>Selected text (Complete content)</b></div>
 					<div id="spacer"></div>
                     <div id="contentall_outer"><div id="contentall_inner">
-                    	<div id="contentall">                        	
+                    	<div id="contentall">
                     		<!-- This div used to display the entire selected text --> 
-                            <!-- <pre> tag added in code to the <div> -->                         
+                            <!-- <pre> tag added in code to the <div> -->
                     	</div>
-					</div></div>					
+					</div></div>
 				</div>
 			</div>
 			<div id="tab3" class="tab-pane">
@@ -145,7 +145,7 @@
 	                    <div class="input-column-container"> 
                             <div class="input-column-left">  
                                 <div id="controls">
-                                    <label for"fontselection">Font</label>						
+                                    <label for"fontselection">Font</label>
                                     <div id="font" class="bfh-selectbox bfh-fonts" data-family="Consolas">
                                         <input id="fontselection" type="hidden" value="">
                                         <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
@@ -234,9 +234,9 @@
                                 <button id="btnSaveSettings" type="button" class="btn btn-info">Save</button>  
                                 <button id="btnRestoreDefaults" type="button" class="btn btn-info">Defaults</button>  
                                 <button id="btnResetSize" type="button" class="btn btn-info">Reset Size</button>  
-                            </div>	
+                            </div>
                         </div>
-					</form>					
+					</form>
 				</div>
 			</div>
 			<div id="tab5" class="tab-pane">
@@ -244,9 +244,9 @@
 				<div id="container">
 					<div id="spacer"></div>
 					<form class="settings" name="advanced">
-                    	<div class="input-column-container"> 
-                            <div class="input-column-left"> 
-                                <div id="controls">                                    
+                    	<div class="input-column-container">
+                            <div class="input-column-left">
+                                <div id="controls">
                                     <label class="control-label"><b>Context sensitive delays</b><br> - Enable and enter millisecond (ms) delay</label>
                                     <div class="controls">
                                         <label class="checkbox" for="pausecomma">Pause after <b>comma</b> (,)</label>
@@ -278,11 +278,12 @@
                                 	<label class="control-label"><b>Display parameters</b><br> - Powered by Sprint Reader</label>
                                     <div class="controls">
                                         <div id="spacer"></div>
-                                        <div class="input-group">
+                                        <div class="input-group-wide-width">
                                             <label for="algorithm">Display algorithm</label>
                                             <select id="algorithm" name="algorithm" class="form-control" form="settings">
                                                 <option value="0">Basic</option>
                                                 <option value="1">Word Length</option>
+                                                <option value="2">Word Frequency (click 'More...' for options)</option>
                                             </select>
                                         </div>                                    
                                         <div id="spacer"></div>
@@ -344,8 +345,8 @@
 								- Reset to start | <b>R</b><br>
                                 - Load clipboard contents | <b>C</b><br>
                                 - Load current selection | <b>V</b><br>
-								- Close reader window | <b>Q</b><br> 								
-							</ol>						
+								- Close reader window | <b>Q</b><br>
+							</ol>
 						</p>
 						<div id="spacer"></div>
                   	</div>
@@ -362,7 +363,7 @@
                                 <li>Press <b>CONTROL+ALT</b> (auto-select mode)</li>
                                 <li>Move mouse to highlight text</li>
                                 <li>Press <b>Z</b> to open reader</li>
-                            </ol>						
+                            </ol>
                         </p>
                     </div>
              	</div>
