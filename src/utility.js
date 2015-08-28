@@ -28,6 +28,11 @@ var madvLongWordMinCharacterPerSlidePostSplit;
 var madvLongWordCharacterTriggerDoNotJoin;
 var madvEnableAcronymDetection;
 var madvEnableNumberDecimalDetection;
+
+var madvWordFreqMinimumSlideDuration;
+var madvWordFreqHighestFreqSlideDuration;
+var madvWordFreqLowestFreqSlideDuration;
+
 var madvWordLengthMinimumSlideDuration;
 var madvBasicMinimumSlideDuration;
 var madvDeleteEmptySlides;
@@ -71,6 +76,10 @@ function getMoreAdvancedSettings() {
 	madvDeleteEmptySlides = getFromLocalNotEmpty('madvDeleteEmptySlides', madvDeleteEmptySlides);	
 	madvWPMAdjustmentStep = getFromLocalGreaterThanZero('madvWPMAdjustmentStep', madvWPMAdjustmentStep);
 	
+	madvWordFreqMinimumSlideDuration = getFromLocalGreaterThanZero('madvWordFreqMinimumSlideDuration', madvWordFreqMinimumSlideDuration);
+	madvWordFreqHighestFreqSlideDuration = getFromLocalGreaterThanZero('madvWordFreqHighestFreqSlideDuration', madvWordFreqHighestFreqSlideDuration);
+	madvWordFreqLowestFreqSlideDuration = getFromLocalGreaterThanZero('madvWordFreqLowestFreqSlideDuration', madvWordFreqLowestFreqSlideDuration);
+	
 	madvWordLengthMinimumSlideDuration = getFromLocalGreaterThanZero('madvWordLengthMinimumSlideDuration', madvWordLengthMinimumSlideDuration);
 	madvBasicMinimumSlideDuration = getFromLocalGreaterThanZero('madvBasicMinimumSlideDuration', madvBasicMinimumSlideDuration);	
 	
@@ -106,6 +115,11 @@ function getMoreAdvancedSettingsDefaults() {
 	madvLongWordCharacterTriggerDoNotJoin = 4;
 	madvEnableAcronymDetection = 'true';
 	madvEnableNumberDecimalDetection = 'true';
+	
+	madvWordFreqMinimumSlideDuration = 40;
+	madvWordFreqHighestFreqSlideDuration = 40;
+	madvWordFreqLowestFreqSlideDuration = 300;
+	
 	madvWordLengthMinimumSlideDuration = 0;
 	madvBasicMinimumSlideDuration = 0;
 	madvDeleteEmptySlides = 'true';
@@ -561,10 +575,10 @@ function saveSelectedTextToResource(latestTextSelection) {
 	if (latestTextSelection == null) latestTextSelection = "";
 	
 	// Don't save duplicate text selections... why would we do this???
-	var text = getSelectedTextFromResourceString(localStorage.getItem('selectedText'));	
+	var text = getSelectedTextFromResourceString(localStorage.getItem('selectedText'));
 	if (text.text == latestTextSelection) return;
 	
-	var hist1 = getSelectedTextFromResourceString(localStorage.getItem('selectedTextHistory1'));	
+	var hist1 = getSelectedTextFromResourceString(localStorage.getItem('selectedTextHistory1'));
 
 	// Save the historical text
 	if (text.text != hist1.text) {
@@ -628,4 +642,21 @@ function insertSVG() {
 		// Update the css for the github_logo class (path)
 		jQuery('.github_logo path').css('fill', colorSentenceBorder);
 	});
+}
+
+function loadScript(url, callback)
+{
+    // Adding the script tag to the head as suggested before
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
+
+    // Fire the loading
+    head.appendChild(script);
 }

@@ -2,7 +2,7 @@
 	"manifest_version": 2,
   	"name": "Sprint Reader - Speed Reading Extension",
   	"description": "Speed reading made easy, train yourself to read 1800+ words per minute. Rapid serial visual presentation (RSVP) at its best!",
-  	"version": "2.1",
+  	"version": "2.2",
   	"content_scripts": [{
       		"matches": ["http://*/*", "https://*/*"],
 		"css": ["src/css/stylepage.css"],

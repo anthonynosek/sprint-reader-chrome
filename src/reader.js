@@ -94,10 +94,18 @@ var sentenceTimer;
 function init() {
 	// Load javascript
 	loadHeavyJavascriptInBackground();
-	// Load the reader window
-	loadReader();
-	// Insert any SVG images
-	insertSVG();
+
+	// wait for frequency data to load
+	loadScript("data/WordFreq_en-US.js", function()
+	{
+		// continue loading the reader window
+
+		// Load the reader window
+		loadReader();
+
+		// Insert any SVG images
+		insertSVG();
+	});
 }
 
 function loadReader() {
@@ -138,7 +146,7 @@ function loadReader() {
 		setFocalCharacter();
 		
 		// Setup the colour picker
-		setColourPicker();	
+		setColourPicker();
 		
 		// Set the font properties, color scheme and display properties
 		setFontProperties();
@@ -1346,17 +1354,17 @@ function textPlay() {
 		setProgress(0);	
 		stopSlideShow = false;
 		playingText = true;	
-		changePlayButtonText(strPause);	
+		changePlayButtonText(strPause);
 		divWord.innerHTML = textArray[0].text;
 		textItemType = 1;
-		setTimeout(playSlideShow, 1000);			
+		setTimeout(playSlideShow, 1000);
 	}
 	// User has commenced normal playback of text
 	else if (!playingText) {
 		changePlayButtonText(strPause);
 		stopSlideShow = false;
-		playingText = true;	
-		playSlideShow();		
+		playingText = true;
+		playSlideShow();
 	}
 	// User was playing text and has instructed to pause
 	else {

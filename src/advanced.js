@@ -119,6 +119,24 @@ function saveMoreAdvancedSettings() {
 		madvWordLengthMinimumSlideDuration = NEWmadvWordLengthMinimumSlideDuration;
 	}
 	
+// Word Frequency Algorithm Advanced Settings
+	var NEWmadvWordFreqMinimumSlideDuration = document.getElementById('wordfreqminimumslideduration').value;
+	if (!isNaN(NEWmadvWordFreqMinimumSlideDuration)) {
+		localStorage.setItem("madvWordFreqMinimumSlideDuration", NEWmadvWordFreqMinimumSlideDuration);
+		madvWordFreqMinimumSlideDuration = NEWmadvWordFreqMinimumSlideDuration;
+	}
+	var NEWmadvWordFreqHighestFreqSlideDuration = document.getElementById('wordfreqhighestfreqslideduration').value;
+	if (!isNaN(NEWmadvWordFreqHighestFreqSlideDuration)) {
+		localStorage.setItem("madvWordFreqHighestFreqSlideDuration", NEWmadvWordFreqHighestFreqSlideDuration);
+		madvWordFreqHighestFreqSlideDuration = NEWmadvWordFreqHighestFreqSlideDuration;
+	}
+	var NEWmadvWordFreqLowestFreqSlideDuration = document.getElementById('wordfreqlowestfreqslideduration').value;
+	if (!isNaN(NEWmadvWordFreqLowestFreqSlideDuration)) {
+		localStorage.setItem("madvWordFreqLowestFreqSlideDuration", NEWmadvWordFreqLowestFreqSlideDuration);
+		madvWordFreqLowestFreqSlideDuration = NEWmadvWordFreqLowestFreqSlideDuration;
+	}
+// end (Word Frequency Algorithm Advanced Settings)
+	
 	var NEWmadvAlwaysHideFocalGuide = document.getElementById('alwayshidefocalguide').checked;
 	localStorage.setItem("madvAlwaysHideFocalGuide", NEWmadvAlwaysHideFocalGuide);
 	
@@ -259,7 +277,11 @@ function displayMoreAdvancedSettings() {
 	
 	document.getElementById('wpmadjustmentstep').value = madvWPMAdjustmentStep;
 	document.getElementById('basicminimumslideduration').value = madvBasicMinimumSlideDuration;
-	document.getElementById('wordlengthminimumslideduration').value = madvWordLengthMinimumSlideDuration;	
+	document.getElementById('wordlengthminimumslideduration').value = madvWordLengthMinimumSlideDuration;
+	
+	document.getElementById('wordfreqminimumslideduration').value = madvWordFreqMinimumSlideDuration;
+	document.getElementById('wordfreqhighestfreqslideduration').value = madvWordFreqHighestFreqSlideDuration;
+	document.getElementById('wordfreqlowestfreqslideduration').value = madvWordFreqLowestFreqSlideDuration;
 	
 	if (madvAlwaysHideFocalGuide == 'true') {
 		$('#alwayshidefocalguide').prop('checked', 'true');
