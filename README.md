@@ -10,13 +10,13 @@ Simply select text on a webpage, right-click and select `Sprint read selected te
 
 This method of reading is known as **Rapid Serial Visual Presentation** or RSVP for short. Studies have shown the habit of internally "sounding out" (sub-vocalising) words is a limiting factor which prevents faster reading speeds from being obtained. RSVP eliminates the "sounding out" of words as individual words are not displayed long enough for sub-vocalisation to occur.
 
-RSVP proves that humans are capable of absorbing information at speeds much faster than standard reading rates with the same level of comprehension.
+RSVP proves that humans can absorb information much faster than standard reading rates with the same level of comprehension.
 
 Key features of Sprint Reader:  
 > Multiple colour schemes  
 > Optimal letter highlighting  
 > Automatic language detection  
-> Adjustable font and font size.  
+> Adjustable font and font size  
 > Adjustable word-per-minute (WPM)  
 > Intelligent hyphenation of words  
 > Focal guides to improve attention  
@@ -39,7 +39,7 @@ Key features of Sprint Reader:
 
 ## <a name="social"></a>Sprint Reader on Social Media
 
-Sprint Reader has both a ﻿![Google+](https://raw.githubusercontent.com/anthonynosek/sprint-reader-chrome/master/src/graphics/google_plus_16x16.png?raw=true) [ Google+](https://plus.google.com/b/105075625257906831241/105075625257906831241/posts) and ﻿![Facebook](https://raw.githubusercontent.com/anthonynosek/sprint-reader-chrome/master/src/graphics/facebook_16x16.png?raw=true) [ Facebook](https://www.facebook.com/SprintReader) page where you can keep up to date with the latest developments, interesting articles and Sprint Reader marketing. It's useful to periodically review these pages for information related to usage and the feedback/suggestions from existing users.
+Sprint Reader has both a ﻿![Google+](https://raw.githubusercontent.com/anthonynosek/sprint-reader-chrome/master/src/graphics/google_plus_16x16.png?raw=true) [ Google+](https://plus.google.com/b/105075625257906831241/105075625257906831241/posts) and ﻿![Facebook](https://raw.githubusercontent.com/anthonynosek/sprint-reader-chrome/master/src/graphics/facebook_16x16.png?raw=true) [ Facebook](https://www.facebook.com/SprintReader) page for the latest developments, interesting articles and updates from the Sprint Reader team. Check back for new tips and suggestions from our sprinters.
 
 ## <a name="useful-resources"></a>Useful Resources
 
@@ -50,9 +50,9 @@ Sprint Reader has both a ﻿![Google+](https://raw.githubusercontent.com/anthony
 
 ## <a name="getting-started"></a>Getting Started
 
-We've made it easy for you to write code and develop new features for Sprint Reader. **To get started all you need is to download the source code** and load the extension into Google Chrome (Developer mode).
+We've made it easy for you to write code and develop new features for Sprint Reader. **To start: Download the source code** and load the extension into Google Chrome (Developer mode).
 
-The following text has been extracted from the official [Google Chrome](https://developer.chrome.com/extensions/getstarted) website:
+From the official [Google Chrome](https://developer.chrome.com/extensions/getstarted) website:
 
 > Extensions that you download from the Chrome Web Store are packaged up as .crx files, which is great for distribution, but not so great for development. Recognizing this, Chrome gives you a quick way of loading up your working directory for testing. Let's do that now.
 
@@ -73,7 +73,7 @@ See the [Wiki](https://github.com/anthonynosek/sprint-reader-chrome/wiki) for fu
 
 ## <a name="license"></a>License
 
-Copyright (c) 2013-2014, Anthony Nosek  
+Copyright (c) 2013-2015, Anthony Nosek  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
