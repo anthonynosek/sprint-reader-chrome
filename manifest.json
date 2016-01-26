@@ -15,7 +15,8 @@
   	"commands": {
     		"sprint-read-shortcut": {
       			"suggested_key": {
-        			"default": "Ctrl+Shift+Z"
+        			"default": "Ctrl+Shift+Z",
+        			"mac": "MacCtrl+Shift+Z"
       			},
       		"description": "Sprint read selected text"
       		}
