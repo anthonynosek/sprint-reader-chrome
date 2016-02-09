@@ -450,6 +450,11 @@ label {
 	font-family: Monaco,Menlo,Consolas,"Courier New",monospace;  
 }
 
+#develop_div {
+	display: block;
+	width: 100%;
+}
+
 #develop {
 	float: left;
 	display: block;
