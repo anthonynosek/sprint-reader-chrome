@@ -12,16 +12,6 @@
 // text and how it should be run (timing) on the screen.
 // It's the brains behind this silly little extension!
 
-// User settings
-var WPM;
-var font;
-var fontSize;
-var chunkSize;
-var autoStart;
-var playingText;
-var autoStartSeconds;
-var autoCloseReader;
-
 // Language of selected text
 //	- language.shortname
 //	- language.fullname

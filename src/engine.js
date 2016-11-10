@@ -6,6 +6,15 @@
 //	https://github.com/anthonynosek/sprint-reader-chrome/blob/master/LICENSE
 //
 //------------------------------------------------------------------------------
+// User settings
+var WPM;
+var font;
+var fontSize;
+var chunkSize;
+var autoStart;
+var playingText;
+var autoStartSeconds;
+var autoCloseReader;
 
 // Word arrays and control variables
 var wordIndex;
@@ -186,7 +195,7 @@ function splitTextToArray_FirstPass(selectedText) {
 	// has no space character
 	var spacedText = htmlEntitiesDecode(selectedText);
 	if (madvEnableSpaceInsertion == 'true') {
-		spacedText = selectedText.replace(/([.,?!:;])(?! )/g, '$1 ');
+		selectedText = selectedText.replace(/([.,?!:;])(?! )/g, '$1 ');
 	}
 	spacedText = htmlEntitiesEncode(selectedText);
 	
