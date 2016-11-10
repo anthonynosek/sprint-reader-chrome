@@ -112,6 +112,12 @@ function saveMoreAdvancedSettings() {
 		localStorage.setItem("madvWPMAdjustmentStep", NEWmadvWPMAdjustmentStep);
 		madvWPMAdjustmentStep = NEWmadvWPMAdjustmentStep;
 	}
+
+	var NEWmadvBasicMinimumSlideDuration = document.getElementById('basicminimumslideduration').value;
+	if (!isNaN(NEWmadvBasicMinimumSlideDuration)) {
+		localStorage.setItem("madvBasicMinimumSlideDuration", NEWmadvBasicMinimumSlideDuration);
+		madvBasicMinimumSlideDuration = NEWmadvBasicMinimumSlideDuration;
+	}
 	
 	var NEWmadvWordLengthMinimumSlideDuration = document.getElementById('wordlengthminimumslideduration').value;
 	if (!isNaN(NEWmadvWordLengthMinimumSlideDuration)) {
