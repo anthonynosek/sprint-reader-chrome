@@ -73,7 +73,7 @@ See the [Wiki](https://github.com/anthonynosek/sprint-reader-chrome/wiki) for fu
 
 ## <a name="license"></a>License
 
-Copyright (c) 2013-2016, Anthony Nosek  
+Copyright (c) 2013-2017, Anthony Nosek  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
