@@ -44,6 +44,7 @@ var strPlay = "Play";
 // Divs that are used frequently
 var divPlay;
 var divWord;
+var divRemainingTime;
 var divProgress;
 var divProgressUpdate;
 
@@ -79,6 +80,7 @@ var divContentAll;
 
 // Misc.
 var sentenceTimer;
+var showRemainingTime;
 
 // Initialise the main screen
 function init() {
@@ -174,6 +176,7 @@ function loadReader() {
 		
 		// Find the progress bar, we need it later and frequently
 		divProgressUpdate = $("#progress-indicator");
+
 		
 		// Set the initial text location/position variables
 		textItemIndex = 0;
@@ -257,6 +260,7 @@ function setFocalCharacter() {
 function setDivVariables() {
 	if (!divVariablesHaveBeenAssigned) {
 		divPlay = document.getElementById('btnPlay');	
+		divRemainingTime = document.getElementById('remainingTime');
 		divProgress = document.getElementById('progress');	
 		divMenuReset = document.getElementById('menuReset');
 		divMenuStepBack = document.getElementById('menuStepBack');
@@ -513,6 +517,9 @@ function getSettings() {
 	textOrientationIsRightToLeft = getFromLocalNotEmpty('textOrientationIsRightToLeft', textOrientationIsRightToLeft);
 	textOrientationAutoDetect = getFromLocalNotEmpty('textOrientationAutoDetect', textOrientationAutoDetect);
 	setTextOrientation();
+
+	//Display
+	showRemainingTime = getFromLocalNotEmpty('showRemainingTime', showRemainingTime);
 }
 
 function getAdvancedSettings() {
@@ -643,6 +650,13 @@ function displaySettings() {
 	else {
 		$('#autotextorientation').removeAttr('checked');
 	}
+
+	if (showRemainingTime == 'true') {
+		$('#showremainingtime').prop('checked', 'true');
+	}
+	else {
+		$('#showremainingtime').removeAttr('checked');
+	}
 }
 
 function displayAdvancedSettings() {
@@ -727,7 +741,7 @@ function saveSettings() {
 		localStorage.setItem("colorScheme", newColorScheme);
 		colorScheme = newColorScheme;
 	}
-	
+
 	// Assign the values to variables
 	font = newFont;
 	
@@ -751,6 +765,11 @@ function saveSettings() {
 	var newtextOrientationAutoDetect = document.getElementById('autotextorientation').checked;
 	localStorage.setItem("textOrientationAutoDetect", newtextOrientationAutoDetect);
 	textOrientationAutoDetect = newtextOrientationAutoDetect;
+
+	//Display
+	var newShowRemainingTime = document.getElementById('showremainingtime').checked;
+	localStorage.setItem("showRemainingTime",newShowRemainingTime);
+	showRemainingTime = newShowRemainingTime;
 			
 	// Because the settings have changed we need to adjust the output accordingly
 	// setFontProperties();
@@ -1810,6 +1829,7 @@ function getSentence() {
 // Set the progress bar for the selected text length
 function setProgress(percent) {
 	var progress = percent + '%';
+	divRemainingTime.innerHTML = showRemainingTime == 'true' ? getMinAndSecondsString(slideShowData.totalDurationIncPauses * (100 - percent) / 100) : "";
 	divProgressUpdate.css('width', progress);
 }
 

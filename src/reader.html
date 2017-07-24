@@ -67,8 +67,9 @@
                                 <li><a id="menuLoadClipboard">Load clipboard content (C)</a></li>
 							</ul>
 							<div id="progress" class="progress progress-striped"> 
+                                <div id="remainingTime" class="remainingTime"></div>
 								<div id="progress-indicator" class="progress-bar progress-bar-info" style="width: 0%">
-								</div>
+                                </div>
 							</div>
 						</div>
 					</div>
@@ -225,6 +226,15 @@
                                             Try auto-detecting text orientation</b>
                                             </label>
                                         </div>
+                                        <div id="spacer"></div>
+                                        <label class="control-label"><b>Display</b></label>
+                                        <div id="spacer"></div> 
+                                        <div class="input-group">
+                                        <label class="checkbox_plain" for="showremainingtime" id="showremainingtimelabel">
+                                        <input type="checkbox" id="showremainingtime">
+                                        Show Remaining Time
+                                        </label>
+                                    </div> 
                                 	</div>                                                             
                                 </div>
                            	</div>
