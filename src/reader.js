@@ -473,6 +473,7 @@ function getSettingsDefault() {
 	autoCloseReader = 'false';
 	textOrientationIsRightToLeft = 'false';
 	textOrientationAutoDetect = 'true';
+	showRemainingTime = 'false';
 }
 
 function getAdvancedSettingsDefault() {
