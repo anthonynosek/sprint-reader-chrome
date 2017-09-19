@@ -35,6 +35,10 @@ input[type="number"] {
 	width: 100%;
 }
 
+.input-column-container-block {
+	width: 100%;
+}
+
 .input-column-left {
 	width: 315px;
 	float: left;
@@ -237,6 +241,7 @@ label {
 .remainingTime {
 	text-align: center;
 	height: 0px;
+	font-family: Monaco,Menlo,Consolas,"Courier New",monospace; 
 }
 
 .progress {
@@ -424,8 +429,8 @@ label {
 }
 
 #contentall pre {
-    	display: block;
-    	font-family: Monaco,Menlo,Consolas,"Courier New",monospace;    	
+    display: block;
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;    	
 	padding: 0px;
 	margin-top: 10px;
 	font-size: 14px;
