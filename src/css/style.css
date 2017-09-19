@@ -234,6 +234,11 @@ label {
 	font-size: 11px;
 }
 
+.remainingTime {
+	text-align: center;
+	height: 0px;
+}
+
 .progress {
 	margin-top: 13px;
 	margin-left: 50px;
