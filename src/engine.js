@@ -39,9 +39,11 @@ var selectedAlgorithmName = "basic";
 var pauseAfterComma;
 var pauseAfterPeriod;
 var pauseAfterParagraph;
+var wordFlicker;
 var pauseAfterCommaDelay;
 var pauseAfterPeriodDelay;
 var pauseAfterParagraphDelay;
+var wordFlickerPercent;
 
 // Advanced display settings
 var highlightOptimalLetter;
@@ -1013,6 +1015,9 @@ function playSlideShow() {
 	// Determine if we stop the recursive loop
     if (!stopSlideShow) {
 		//console.log("Slide delay: " + showSlideTime + " - textItemIndex: " + textItemIndex-1);
+		if (wordFlicker == 'true') {
+			{ setTimeout(function() { displayBlankWord(); }, showSlideTime * (100 - wordFlickerPercent) / 100); }
+		}
     	{ setTimeout(function() { playSlideShow() }, showSlideTime); }
 	}
 	else {

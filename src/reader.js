@@ -477,9 +477,11 @@ function getAdvancedSettingsDefault() {
 	pauseAfterComma = 'true';
 	pauseAfterPeriod = 'true';
 	pauseAfterParagraph = 'true';	
+	wordFlicker = 'false';
 	pauseAfterCommaDelay = 250;
 	pauseAfterPeriodDelay = 450;
 	pauseAfterParagraphDelay = 700;
+	wordFlickerPercent = 10;
 	
 	highlightOptimalLetter = 'true';
 	highlightOptimalLetterColour = '#FF0000';	
@@ -531,6 +533,10 @@ function getAdvancedSettings() {
 	// Pause after a paragraph
 	pauseAfterParagraph = getFromLocalNotEmpty('pauseParagraph', pauseAfterParagraph);
 	pauseAfterParagraphDelay = getFromLocalIsNumber('pauseParagraphDelay', pauseAfterParagraphDelay);
+
+	//Word Flicker
+	wordFlicker = getFromLocalNotEmpty('wordFlicker', wordFlicker);
+	wordFlickerPercent = getFromLocalIsNumber('wordFlickerPercent', wordFlickerPercent);
 	
 	// Display parameters
 	textPosition = getFromLocalIsNumber('textPosition', textPosition);
@@ -670,9 +676,17 @@ function displayAdvancedSettings() {
 		$('#pauseparagraph').removeAttr('checked');
 	}
 
+	if (wordFlicker == 'true') {
+		$('#wordflicker').prop('checked', 'true');	
+	}
+	else {
+		$('#wordflicker').removeAttr('checked');
+	}
+
 	document.getElementById('pausecommadelay').value = pauseAfterCommaDelay;
 	document.getElementById('pauseperioddelay').value = pauseAfterPeriodDelay;
 	document.getElementById('pauseparagraphdelay').value = pauseAfterParagraphDelay;
+	document.getElementById('wordflickerpercent').value = wordFlickerPercent;
 
 	// Advanced display parameters		
 	setColourPickerDisplay(highlightOptimalLetterColour);
@@ -773,14 +787,17 @@ function saveAdvancedSettings() {
 	var newPauseCommaDelay = document.getElementById('pausecommadelay').value;
 	var newPausePeriodDelay = document.getElementById('pauseperioddelay').value;
 	var newPauseParagraphDelay = document.getElementById('pauseparagraphdelay').value;
+	var newWordFlickerPercent = document.getElementById('wordflickerpercent').value;
 	
 	var newPauseComma = document.getElementById('pausecomma').checked;
 	var newPausePeriod = document.getElementById('pauseperiod').checked;
 	var newPauseParagraph = document.getElementById('pauseparagraph').checked;
+	var newWordFlicker = document.getElementById('wordflicker').checked;
 	
 	localStorage.setItem("pauseComma", newPauseComma);
 	localStorage.setItem("pausePeriod", newPausePeriod);
 	localStorage.setItem("pauseParagraph", newPauseParagraph);
+	localStorage.setItem("wordFlicker", newWordFlicker);
 
 	// These settings need to be numbers
 	// If the user has not entered a valid number we
@@ -801,11 +818,17 @@ function saveAdvancedSettings() {
 		localStorage.setItem("pauseParagraphDelay", newPauseParagraphDelay);
 		pauseAfterParagraphDelay = newPauseParagraphDelay;
 	}
+
+	if (!isNaN(newWordFlickerPercent)) { 
+		localStorage.setItem("wordFlickerPercent", newWordFlickerPercent);
+		wordFlickerPercent = newWordFlickerPercent;
+	}
 	
 	// Assign the values to variables
 	pauseAfterComma = newPauseComma;
 	pauseAfterPeriod = newPausePeriod;
-	pauseAfterParagraph = newPauseParagraph;		
+	pauseAfterParagraph = newPauseParagraph;	
+	wordFlicker = newWordFlicker;	
 	
 	// Determine if we need to recalculate timings for the selected text	
 	if (newAlgorithm != selectedAlgorithm) {
