@@ -39,7 +39,7 @@ Key features of Sprint Reader:
 
 ## <a name="social"></a>Sprint Reader on Social Media
 
-Sprint Reader has both a ﻿![Google+](https://raw.githubusercontent.com/anthonynosek/sprint-reader-chrome/master/src/graphics/google_plus_16x16.png?raw=true) [ Google+](https://plus.google.com/b/105075625257906831241/105075625257906831241/posts) and ﻿![Facebook](https://raw.githubusercontent.com/anthonynosek/sprint-reader-chrome/master/src/graphics/facebook_16x16.png?raw=true) [ Facebook](https://www.facebook.com/SprintReader) page for the latest developments, interesting articles and updates from the Sprint Reader team. Check back for new tips and suggestions from our sprinters.
+Sprint Reader has a ﻿![Facebook](https://raw.githubusercontent.com/anthonynosek/sprint-reader-chrome/master/src/graphics/facebook_16x16.png?raw=true) [ Facebook](https://www.facebook.com/SprintReader) page for the latest developments, interesting articles and updates from the Sprint Reader team. Check back for new tips and suggestions from our sprinters.
 
 ## <a name="useful-resources"></a>Useful Resources
 
@@ -73,7 +73,7 @@ See the [Wiki](https://github.com/anthonynosek/sprint-reader-chrome/wiki) for fu
 
 ## <a name="license"></a>License
 
-Copyright (c) 2013-2017, Anthony Nosek  
+Copyright (c) 2013-2020, Anthony Nosek  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
