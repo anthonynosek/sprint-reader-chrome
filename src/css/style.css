@@ -270,12 +270,12 @@ label {
 }
 
 .bfh-selectbox-options a {
-	padding: 3px 0px;
+	padding: 3px 0;
 }
 
 .nav-tabs {
 	margin-left: -1px;
-	border-bottom: 0px !important;
+	border-bottom: 0 !important;
 	border-top: 1px solid #ddd;
 }
 
@@ -312,7 +312,7 @@ label {
 	float: right;
 	position: relative;
 	/* height: 25px; */
-	margin: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
 	overflow: hidden;
 	display: inline-block;
 	z-index:1000;
@@ -322,7 +322,7 @@ label {
 .google {
 	position: relative;
 	float: left;
-	margin: 10px 8px 0px 0px;
+	margin: 10px 8px 0 0;
 }
 
 .facebook {
@@ -334,7 +334,7 @@ label {
 .github {
 	position: relative;
 	float: left;
-	margin: 12px 8px 0px 0px;
+	margin: 12px 8px 0 0;
 }
 
 .github_logo path {
@@ -353,7 +353,7 @@ label {
 }
 
 #welcome_container {
-	margin: 30px 0px 0px 30px;
+	margin: 30px 0 0 30px;
 }
 
 .update_log {
