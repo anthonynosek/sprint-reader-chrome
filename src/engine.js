@@ -32,7 +32,7 @@ let textItemIndex = 0;
 //		0 = BASIC
 //		1 = WORDLENGTH
 //		2 = WORDFREQ
-const selectedAlgorithm = 0;
+let selectedAlgorithm = 0;
 let selectedAlgorithmName = "basic";
 
 // Additional advanced settings
@@ -58,9 +58,9 @@ let textPosition;
 // Text orientation constiables
 // 	- 	Default (left to right)
 //		textOrientationIsRightToLeft = false
-const displayReaderRightToLeft = false;
-const textOrientationAutoDetect = 'true';
-const textOrientationIsRightToLeft = 'false';
+let displayReaderRightToLeft = false;
+let textOrientationAutoDetect = 'true';
+let textOrientationIsRightToLeft = 'false';
 
 // The first pass text array
 //		.text							<- text to be displayed
