@@ -1,260 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 
 <head>
-	<title>Sprint Reader</title>
-    
-    <!-- Link to jQuery library -->
-	<script src="../lib/jquery/jquery.min.js"></script>
-    
-    <!-- Link to bootstrap library -->
-	<script src="../lib/bootstrap/bootstrap.min.js"></script>
-	<link type="text/css" rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">  
-    
-    <!-- Load local resources -->
-    <script src="utility.js"></script>
-    <script src="updated.js"></script>
-	<link type="text/css" rel="stylesheet" href="css/style.css" id="css-style">
+  <title>Sprint Reader</title>
+
+  <!-- Link to jQuery library -->
+  <script src="../lib/jquery/jquery.min.js"></script>
+
+  <!-- Link to bootstrap library -->
+  <script src="../lib/bootstrap/bootstrap.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">
+
+  <!-- Load local resources -->
+  <script src="utility.js"></script>
+  <script src="updated.js"></script>
+  <link type="text/css" rel="stylesheet" href="css/style.css" id="css-style">
 </head>
 <body>
-	<div id="welcome_container">
-        <div id="welcome_icon">
-            <img src="graphics/icon128.png" alt="Sprint Reader">
-        </div>
-        <div id="spacer"></div>
-        <h4>Sprint Reader has been updated!</h4>
-        <p><b>Speed reading made easy</b>, train yourself to read 1800+ words per minute.<br>Rapid serial visual presentation (RSVP) at its best!</p> 
-        <div id="spacer"></div>	
-      	<div id="develop_div">
-        	<b>Help us develop Sprint Reader!</b>
-        	<p>Sprint Reader is an open source project which means you can contribute, fix bugs and add functionality.</p>
-        	<img src="graphics/github-mark-32px.png" style="vertical-align: middle;margin-right: 5px;"> <a href="https://github.com/anthonynosek/sprint-reader-chrome" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/anthonynosek/sprint-reader-chrome']);" target="_blank">Become a developer for Sprint Reader</a>
-        </div>
-        <div id="spacer"></div>
-        <div id="spacer"></div>
-        <div id="version"><b>Sprint Reader</b></div>
-        <p>Please show us your appreciation!<br>A like or follow is all we ask:</p>
-        <li> <img src="graphics/facebook_16x16.png" style="vertical-align: middle;margin-right: 5px;"> <a href="https://www.facebook.com/SprintReader" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.facebook.com']);" target="_blank">Facebook</a> </li>
-        <div id="spacer"></div>
-        <div id="spacer"></div>	
-		<h3>So what's new?</h3>
-        <div id="update_log">
-        <h2><b>Version 2.5.0</b></h2>
-            <ol><li>Bug fixes, minor refactoring</li>
-                <li>Added feature to show the remaining time in the status bar (thanks <a href="https://github.com/richardkopelow" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/richardkopelow']);" target="_blank">richardkopelow</a>)</li>   
- 				<li>Ensure 'Defaults' button resets the showRemainingTime setting (thanks <a href="https://github.com/richardkopelow" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/richardkopelow']);" target="_blank">richardkopelow</a>)</li> 
-                <li>Added the ability to flicker the words rather than directly switching (thanks <a href="https://github.com/richardkopelow" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/richardkopelow']);" target="_blank">richardkopelow</a>)</li> 
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 2.4.0</b></h2>
-            <ol><li>Bug fixes, minor refactoring, tests introduced</li>
-                <li>Fixed space insertion bug (thanks <a href="https://github.com/twto" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/twto']);" target="_blank">twto</a>)</li>   
-                <li>Save user basic minimum slide duration (thanks <a href="https://github.com/twto" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/twto']);" target="_blank">twto</a>)</li>
-                <li>Added (started) test suite (thanks <a href="https://github.com/twto" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/twto']);" target="_blank">twto</a>)</li>           	
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 2.3.0</b></h2>
-            <ol><li>Minor code refactoring</li>
-                <li>Text changes/improvements (thanks <a href="https://github.com/evanwolf" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/evanwolf']);" target="_blank">evanwolf</a>)</li>     
-                <li>Added options_page to manifest (thanks ashrode)</li> 
-                <li>Add Mac shortcut, Ctrl+Shift+Z (thanks <a href="https://github.com/spacetag" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/spacetag']);" target="_blank">spacetag</a>)</li>            	
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 2.2.0</b></h2>
-            <ol><li>Minor code refactoring</li>
-                <li>Added word frequency algorithm (thanks <a href="https://github.com/denilsonsa" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/denilsonsa']);" target="_blank">Nir Maoz</a>)</li>                	
-            </ol>				
-        </p>
-        </div>
-       	<div id="update_log">
-        <h2><b>Version 2.1.0</b></h2>
-            <ol><li>First release as open source project</li>
-            	<li>Resolved #1 (GitHub icon update)</li>
-                <li>Added project contributer credits</li>
-            	<li>Resolved #2 (Fix &lt;label for="checkbox"&gt;)</li> 
-                <li>Resolved #5 (Ctrl-Alt + Z Shortcut not working)</li>                	
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 2.0.0</b></h2>
-            <ol><li>Sprint Reader now open source!</li>
-            	<li>Added open source icons and links</li>
-                <li>Added acknowledgements tab to popup</li>                  	
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 1.4.6</b></h2>
-            <ol><li>Added 'display social' option</li>
-            	<li>Added 'display progress' option</li>
-                <li>Added 'display wpm summary' option</li> 
-                <li>Added html encoding of selected text</li> 
-                <li>Removed console log for acronym check</li> 
-                <li>Added display of entire text selection</li> 
-                <li>Resolved issue with selected text resetting</li>
-                <li>Resolved duplicate long-word in display sentence</li>                   	
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 1.4.5</b></h2>
-            <ol><li>Added 'Tokyo' colour scheme</li>
-            	<li>Resolved duplicate context menu issue</li>                     	
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 1.4.4</b></h2>
-            <ol><li>Improved splitting algorithm</li>
-            	<li>Improved abbreviation detection</li>
-                <li>Added link to open reader in popup</li> 
-                <li>Resolved long word split algorithm</li>  
-                <li>Added 'Olive Branch' colour scheme</li>     	
-            </ol>				
-        </p>
-       	</div>
-       	<div id="update_log">
-        <h2><b>Version 1.4.3</b></h2>
-            <ol><li>Improved splitting by whitespace</li>
-            	<li>Added 'Purdy Pink' colour scheme</li>
-                <li>Added 'Earthy Greens' colour scheme</li>
-                <li>Resolved acronym display in sentence</li>
-                <li>Option to display sentence at reader open</li>
-                <li>Fixed tab window border (bottom) alignment</li>
-                <li>Improved progress bar text search (via click)</li>
-                <li>Added option to save location within text on close</li>
-                <li>Improved management of historical text selection storage</li>
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 1.4.2</b></h2>
-            <ol><li>CTRL+ALT shortcut disabled by default</li>
-            	<li>Added option to disable CTRL+ALT shortcut</li>
-                <li>Resolved 'sentence hidden number' (,) issue</li>
-                <li>Updated deprecated Chrome sendMessage API calls</li>
-                <li>Resolved issue with focal guide not showing with autostart</li>
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 1.4.1</b></h2>
-            <ol><li>Resolved (t) undefined issue setting Word Length timing</li>
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 1.3.8</b></h2>
-            <ol><li>Changed auto-select shortcut from SHIFT to CONTROL+ALT</li>
-            	<li>Resolved 'undefined' issue with non-english hyphenation</li>
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 1.3.7</b></h2>
-            <ol><li>Added 'Charcoal' colour scheme</li>
-            	<li>Added 'Real' WPM data to reader status</li>
-            	<li>Google API 'Plus One' now loads via AJAX</li>
-            	<li>Added language auto-detection (95 languages)</li>
-                <li>Hide social icons when no connectivity detected</li>
-            	<li>Resolved issue with RTL variable not being reset</li>
-                <li>Added WPM adjustment step variable (default: 25)</li>
-                <li>Added language/syllable aware hyphenation of words</li>   
-                <li>Added page text auto-selection. Toggle on/off: SHIFT</li>               
-                <li>Added ability to access local file-system from Chrome</li>
-                <li>Added minimum slide duration (ms) for basic algorithm</li>
-                <li>Additional Google analytic metrics added, i.e. language</li>
-                <li>WPM can be adjusted during playback via 'Z' and 'X' keys</li>
-                <li>Added 'Real' and 'All' WPM data to status mouseover slide</li>
-                <li>Added minimum slide duration (ms) for word length algorithm</li>
-                <li>Added sentence 'paused word' location/positioning variables</li>
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 1.3.6</b></h2>
-            <ol><li>Added large step functionality</li>
-            	<li>Added 'Dark Grey' colour scheme</li>
-            	<li>Added 'Dark Purple' colour scheme</li>
-            	<li>Added sentence display on reader 'pause'</li>
-            	<li>Fixed word spacing issue when chunking > 1</li>
-            	<li>Improved loading of Google Analytic script</li>
-            	<li>Added sentence display configuration settings</li>
-            	<li>Added auto-detection of right-to-left text setting</li>
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 1.3.5</b></h2>
-            <ol><li>Fixed focal guide refresh issue</li>
-            	<li>Added word 'right-to-left' option</li>
-                <li>Added 'Neutral Farm' colour scheme</li>
-                <li>Can read system clipboard contents</li>
-                <li>Algorithm now caters for<br>
-					+ Hebrew text<br>
-					+ Arabic text<br>
-					+ Syriac text<br>
-                    + Any right to left language<br>
-				</li>
-                <li>Added 'Load latest selection' shortcut</li>
-                <li>Added 'Load clipboard content' shortcut</li>
-                <li>Resolved issue with shortcut double-bind</li>
-                <li>Added 'Load clipboard content' menu command</li>
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 1.3.4</b></h2>
-            <ol><li>Added update notification page</li>
-            	<li>Added more advanced setting page</li>
-                <li>Added 'El Designo' colour scheme</li>
-            	<li>Fixed initial word location issue</li>
-                <li>Added welcome page on initial install</li>
-                <li>Updated shortcut in extension description</li>
-                <li>Fixed focal guide positioning for smaller font sizes</li>
-            </ol>				
-        </p>
-        </div>
-        <div id="update_log">
-        <h2><b>Version 1.3.3</b></h2>
-            <ol><li>Added auto start option</li>
-            	<li>Added Google Analytics message</li>
-                <li>Added high contrast colour scheme</li>
-                <li>Comma pause applies after colon (:)</li>
-                <li>Added auto start delay seconds option</li>
-                <li>Added auto close reader window option</li>
-                <li>Comma pause applies after semi-colon (;)</li>
-                <li>Reduced size of fixed focal character</li>
-                <li>Added visual guide for optimal positioning</li>
-                <li>Changed shortcut from ALT+Z to CTRL+SHIFT+Z</li>
-                <li>Increased the default width of reader window</li>
-                <li>Trim slide duration ms info to two decimal places</li>
-                <li>Algorithm now caters for<br>
-					+ Abbreviations<br>
-					+ Acronyms<br>
-					+ Initialisms<br>
-				</li>
-                <li>Algorithm now caters for long hyphenated words</li>
-                <li>Algorithm will intelligently filter empty slides</li>
-                <li>Algorithm now caters for numbers displaying decimals</li>
-                <li>Algorithm will split longer words into multiple parts</li>
-                <li>Fixed 'r' shortcut not restarting at end of slideshow</li>
-                <li>Fixed initial word positioning issue (where applicable)</li>
-            </ol>				
-        </p>
-        </div>
- 	</div>
-    <div id="spacer"></div>
-   	<div id="spacer"></div>
-    <div id="spacer"></div>
-    <div id="spacer"></div>
+<div id="welcome_container">
+  <div id="welcome_icon">
+    <img src="graphics/icon128.png" alt="Sprint Reader">
+  </div>
+  <div class="spacer"></div>
+  <h4>Sprint Reader has been updated!</h4>
+  <p><b>Speed reading made easy</b>, train yourself to read 1800+ words per minute.<br>Rapid serial visual presentation
+    (RSVP) at its best!</p>
+  <div class="spacer"></div>
+  <div id="develop_div">
+    <b>Help us develop Sprint Reader!</b>
+    <p>Sprint Reader is an open source project which means you can contribute, fix bugs and add functionality.</p>
+    <img src="graphics/github-mark-32px.png" style="vertical-align: middle;margin-right: 5px;" alt="Dev"> <a
+      href="https://github.com/anthonynosek/sprint-reader-chrome"
+      onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/anthonynosek/sprint-reader-chrome']);"
+      target="_blank">Become a developer for Sprint Reader</a>
+  </div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div id="version"><b>Sprint Reader</b></div>
+  <p>Please show us your appreciation!<br>A like or follow is all we ask:</p>
+  <ul>
+    <li>
+      <img src="graphics/facebook_16x16.png" style="vertical-align: middle;margin-right: 5px;" alt="Facebook"> <a
+        href="https://www.facebook.com/SprintReader"
+        onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.facebook.com']);" target="_blank">Facebook</a>
+    </li>
+  </ul>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <h3>So what's new?</h3>
+  <div class="update_log">
+    <h2><b>Version 2.5.0</b></h2>
+    <ol>
+      <li>Bug fixes, minor refactoring</li>
+      <li>Added feature to show the remaining time in the status bar (thanks <a href="https://github.com/richardkopelow"
+                                                                                onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/richardkopelow']);"
+                                                                                target="_blank">richardkopelow</a>)
+      </li>
+      <li>Ensure 'Defaults' button resets the showRemainingTime setting (thanks <a
+          href="https://github.com/richardkopelow"
+          onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/richardkopelow']);"
+          target="_blank">richardkopelow</a>)
+      </li>
+      <li>Added the ability to flicker the words rather than directly switching (thanks <a
+          href="https://github.com/richardkopelow"
+          onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/richardkopelow']);"
+          target="_blank">richardkopelow</a>)
+      </li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 2.4.0</b></h2>
+    <ol>
+      <li>Bug fixes, minor refactoring, tests introduced</li>
+      <li>Fixed space insertion bug (thanks <a href="https://github.com/twto"
+                                               onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/twto']);"
+                                               target="_blank">twto</a>)
+      </li>
+      <li>Save user basic minimum slide duration (thanks <a href="https://github.com/twto"
+                                                            onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/twto']);"
+                                                            target="_blank">twto</a>)
+      </li>
+      <li>Added (started) test suite (thanks <a href="https://github.com/twto"
+                                                onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/twto']);"
+                                                target="_blank">twto</a>)
+      </li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 2.3.0</b></h2>
+    <ol>
+      <li>Minor code refactoring</li>
+      <li>Text changes/improvements (thanks <a href="https://github.com/evanwolf"
+                                               onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/evanwolf']);"
+                                               target="_blank">evanwolf</a>)
+      </li>
+      <li>Added options_page to manifest (thanks ashrode)</li>
+      <li>Add Mac shortcut, Ctrl+Shift+Z (thanks <a href="https://github.com/spacetag"
+                                                    onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/spacetag']);"
+                                                    target="_blank">spacetag</a>)
+      </li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 2.2.0</b></h2>
+    <ol>
+      <li>Minor code refactoring</li>
+      <li>Added word frequency algorithm (thanks <a href="https://github.com/denilsonsa"
+                                                    onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/denilsonsa']);"
+                                                    target="_blank">Nir Maoz</a>)
+      </li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 2.1.0</b></h2>
+    <ol>
+      <li>First release as open source project</li>
+      <li>Resolved #1 (GitHub icon update)</li>
+      <li>Added project contributer credits</li>
+      <li>Resolved #2 (Fix &lt;label for="checkbox"&gt;)</li>
+      <li>Resolved #5 (Ctrl-Alt + Z Shortcut not working)</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 2.0.0</b></h2>
+    <ol>
+      <li>Sprint Reader now open source!</li>
+      <li>Added open source icons and links</li>
+      <li>Added acknowledgements tab to popup</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.4.6</b></h2>
+    <ol>
+      <li>Added 'display social' option</li>
+      <li>Added 'display progress' option</li>
+      <li>Added 'display wpm summary' option</li>
+      <li>Added html encoding of selected text</li>
+      <li>Removed console log for acronym check</li>
+      <li>Added display of entire text selection</li>
+      <li>Resolved issue with selected text resetting</li>
+      <li>Resolved duplicate long-word in display sentence</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.4.5</b></h2>
+    <ol>
+      <li>Added 'Tokyo' colour scheme</li>
+      <li>Resolved duplicate context menu issue</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.4.4</b></h2>
+    <ol>
+      <li>Improved splitting algorithm</li>
+      <li>Improved abbreviation detection</li>
+      <li>Added link to open reader in popup</li>
+      <li>Resolved long word split algorithm</li>
+      <li>Added 'Olive Branch' colour scheme</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.4.3</b></h2>
+    <ol>
+      <li>Improved splitting by whitespace</li>
+      <li>Added 'Purdy Pink' colour scheme</li>
+      <li>Added 'Earthy Greens' colour scheme</li>
+      <li>Resolved acronym display in sentence</li>
+      <li>Option to display sentence at reader open</li>
+      <li>Fixed tab window border (bottom) alignment</li>
+      <li>Improved progress bar text search (via click)</li>
+      <li>Added option to save location within text on close</li>
+      <li>Improved management of historical text selection storage</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.4.2</b></h2>
+    <ol>
+      <li>CTRL+ALT shortcut disabled by default</li>
+      <li>Added option to disable CTRL+ALT shortcut</li>
+      <li>Resolved 'sentence hidden number' (,) issue</li>
+      <li>Updated deprecated Chrome sendMessage API calls</li>
+      <li>Resolved issue with focal guide not showing with autostart</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.4.1</b></h2>
+    <ol>
+      <li>Resolved (t) undefined issue setting Word Length timing</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.3.8</b></h2>
+    <ol>
+      <li>Changed auto-select shortcut from SHIFT to CONTROL+ALT</li>
+      <li>Resolved 'undefined' issue with non-english hyphenation</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.3.7</b></h2>
+    <ol>
+      <li>Added 'Charcoal' colour scheme</li>
+      <li>Added 'Real' WPM data to reader status</li>
+      <li>Google API 'Plus One' now loads via AJAX</li>
+      <li>Added language auto-detection (95 languages)</li>
+      <li>Hide social icons when no connectivity detected</li>
+      <li>Resolved issue with RTL variable not being reset</li>
+      <li>Added WPM adjustment step variable (default: 25)</li>
+      <li>Added language/syllable aware hyphenation of words</li>
+      <li>Added page text auto-selection. Toggle on/off: SHIFT</li>
+      <li>Added ability to access local file-system from Chrome</li>
+      <li>Added minimum slide duration (ms) for basic algorithm</li>
+      <li>Additional Google analytic metrics added, i.e. language</li>
+      <li>WPM can be adjusted during playback via 'Z' and 'X' keys</li>
+      <li>Added 'Real' and 'All' WPM data to status mouseover slide</li>
+      <li>Added minimum slide duration (ms) for word length algorithm</li>
+      <li>Added sentence 'paused word' location/positioning variables</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.3.6</b></h2>
+    <ol>
+      <li>Added large step functionality</li>
+      <li>Added 'Dark Grey' colour scheme</li>
+      <li>Added 'Dark Purple' colour scheme</li>
+      <li>Added sentence display on reader 'pause'</li>
+      <li>Fixed word spacing issue when chunking > 1</li>
+      <li>Improved loading of Google Analytic script</li>
+      <li>Added sentence display configuration settings</li>
+      <li>Added auto-detection of right-to-left text setting</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.3.5</b></h2>
+    <ol>
+      <li>Fixed focal guide refresh issue</li>
+      <li>Added word 'right-to-left' option</li>
+      <li>Added 'Neutral Farm' colour scheme</li>
+      <li>Can read system clipboard contents</li>
+      <li>Algorithm now caters for<br>
+        + Hebrew text<br>
+        + Arabic text<br>
+        + Syriac text<br>
+        + Any right to left language<br>
+      </li>
+      <li>Added 'Load latest selection' shortcut</li>
+      <li>Added 'Load clipboard content' shortcut</li>
+      <li>Resolved issue with shortcut double-bind</li>
+      <li>Added 'Load clipboard content' menu command</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.3.4</b></h2>
+    <ol>
+      <li>Added update notification page</li>
+      <li>Added more advanced setting page</li>
+      <li>Added 'El Designo' colour scheme</li>
+      <li>Fixed initial word location issue</li>
+      <li>Added welcome page on initial install</li>
+      <li>Updated shortcut in extension description</li>
+      <li>Fixed focal guide positioning for smaller font sizes</li>
+    </ol>
+  </div>
+  <div class="update_log">
+    <h2><b>Version 1.3.3</b></h2>
+    <ol>
+      <li>Added auto start option</li>
+      <li>Added Google Analytics message</li>
+      <li>Added high contrast colour scheme</li>
+      <li>Comma pause applies after colon (:)</li>
+      <li>Added auto start delay seconds option</li>
+      <li>Added auto close reader window option</li>
+      <li>Comma pause applies after semi-colon (;)</li>
+      <li>Reduced size of fixed focal character</li>
+      <li>Added visual guide for optimal positioning</li>
+      <li>Changed shortcut from ALT+Z to CTRL+SHIFT+Z</li>
+      <li>Increased the default width of reader window</li>
+      <li>Trim slide duration ms info to two decimal places</li>
+      <li>Algorithm now caters for<br>
+        + Abbreviations<br>
+        + Acronyms<br>
+        + Initialisms<br>
+      </li>
+      <li>Algorithm now caters for long hyphenated words</li>
+      <li>Algorithm will intelligently filter empty slides</li>
+      <li>Algorithm now caters for numbers displaying decimals</li>
+      <li>Algorithm will split longer words into multiple parts</li>
+      <li>Fixed 'r' shortcut not restarting at end of slideshow</li>
+      <li>Fixed initial word positioning issue (where applicable)</li>
+    </ol>
+  </div>
+</div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
 </body>
 </html>

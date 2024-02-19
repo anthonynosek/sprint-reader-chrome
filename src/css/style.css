@@ -11,7 +11,7 @@ h1,h2,h3 {
 h4 {
 	font-weight: normal;
 	font-size: 30px;
-	line-height: 1;	
+	line-height: 1;
 	color: #3399ff;
 }
 
@@ -27,7 +27,7 @@ input[type="number"] {
 
 .input-group-wide-width {
 	width: 400px;
-	margin-bottom: 8px;	
+	margin-bottom: 8px;
 }
 
 .input-column-container {
@@ -50,26 +50,26 @@ input[type="number"] {
 	border-left: 1px solid;
 	border-left-color: rgb(228, 228, 228);
 	margin-left: 20px;
-	padding-left: 20px;	
+	padding-left: 20px;
 	height: 100%;
 	overflow:hidden;
 }
 
-#btnadvancedcontainer {
-    	height: 100%;	
+.btn-advanced-container {
+    	height: 100%;
 }
 
-#btnadvancedcontainer .childDiv {
+.btn-advanced-container .childDiv {
 	position:absolute;
   	bottom:20px;
-  	left:0;	
+  	left:0;
 }
 
-#spacer {
+.spacer {
 	height: 8px
 }
 
-#container {
+.container {
 	min-height: 100%;
     	height: auto !important;
     	height: 100%;
@@ -94,13 +94,13 @@ input[type="number"] {
 	padding-top:0;
 	padding-left:0;
 	padding-bottom:0;
-	padding-right:0;	
+	padding-right:0;
 	display: table;
 	position: relative;
 	word-wrap: normal;
 }
 
-#word-container span{ 
+#word-container span{
 	text-align:center;
 	display: table-cell;
     	vertical-align: middle;
@@ -114,22 +114,22 @@ input[type="number"] {
 	white-space: pre;
 }
 
-#focal-guide{	
-	display: block;	
+.focal-guide{
+	display: block;
 	border-left: 1px solid;
 	border-left-color: #000000;
 	position:absolute;
 	z-index:1200;
 }
 
-#focal-guide.top{	
-	height:0px;
-	top:0px;
+.focal-guide.top{
+	height:0;
+	top:0;
 }
 
-#focal-guide.bottom{
-	height:0px;
-	top:0px;
+.focal-guide.bottom{
+	height:0;
+	top:0;
 }
 
 h1 {
@@ -164,7 +164,7 @@ label {
 
 .checkbox_plain_tight {
 	padding-left: 15px;
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 
 .checkbox_plain_note {
@@ -185,13 +185,13 @@ label {
 	text-shadow:0 0 0;
 }
 
-#controls {
+.controls {
 	display: inline-block;
 	clear:both;
 	width:100%;
 }
 
-#controls button {
+.controls button {
 	float: left;
 	margin-top: 8px;
 	margin-right: 10px;
@@ -217,14 +217,14 @@ label {
 	width:100%;
 	font-size: 12px;
 	text-align: right;
-	margin: 0px;	
+	margin: 0;
 }
 
 #status p {
-	margin: 0px;
+	margin: 0;
 }
 
-#heading {
+.heading {
 	font-size: 18px;
 }
 
@@ -240,8 +240,8 @@ label {
 
 .remainingTime {
 	text-align: center;
-	height: 0px;
-	font-family: Monaco,Menlo,Consolas,"Courier New",monospace; 
+	height: 0;
+	font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
 }
 
 .progress {
@@ -255,9 +255,9 @@ label {
 }
 
 .tab-content {
-	padding: 0px 0px 5px 0px;
+	padding: 0 0 5px 0;
 	border:1px solid #ddd;
-	border-bottom:0px;
+	border-bottom:0;
 }
 
 .bfh-selectbox {
@@ -334,7 +334,7 @@ label {
 .github {
 	position: relative;
 	float: left;
-	margin: 12px 8px 0px 0px;	
+	margin: 12px 8px 0px 0px;
 }
 
 .github_logo path {
@@ -347,7 +347,7 @@ label {
 	overflow: hidden;
 }
 
-.picker-indicator, 
+.picker-indicator,
 .slide-indicator {
 	position: static; !important;
 }
@@ -356,25 +356,25 @@ label {
 	margin: 30px 0px 0px 30px;
 }
 
-#update_log {
+.update_log {
 	font-family: courier;
 	font-size: 12px;
 }
 
-#update_log li {
+.update_log li {
 	line-height: 14px;
 }
 
-#update_log h2 {
+.update_log h2 {
 	font-size: 14px;
 	color: #3399ff;
 }
 
-#advanced-setting {
+.advanced-setting {
 	margin-left: 15px;
 }
 
-#advanced-setting-sub {
+.advanced-setting-sub {
 	margin-left: 30px;
 }
 
@@ -398,7 +398,7 @@ label {
 	left: 50%;
 }
 
-#sentence {		
+#sentence {
 	overflow: hidden;
 	white-space: nowrap;
 	margin-left: -50%;
@@ -423,18 +423,18 @@ label {
 	padding: 10px;
 }
 
-#contentall {		
+#contentall {
 	height: 100%;
 	overflow-y: scroll;
 }
 
 #contentall pre {
     display: block;
-    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;    	
-	padding: 0px;
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+	padding: 0;
 	margin-top: 10px;
 	font-size: 14px;
-	border: 0px;
+	border: 0;
 	white-space: pre-wrap;
 	word-break: break-word;
 	word-wrap: normal;
@@ -457,7 +457,7 @@ label {
 	float: left;
 	font-weight: normal;
 	font-size: 13px;
-	font-family: Monaco,Menlo,Consolas,"Courier New",monospace;  
+	font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
 }
 
 #develop_div {
