@@ -13,50 +13,51 @@
 
 // --------------------------------------------------
 // Misc.
-var textPositionDelimiter = "{{**POSI<>TION**}}";
+const textPositionDelimiter = "{{**POSI<>TION**}}";
 
 // MORE ADVANCED SETTINGS (Variables)
 // Algorithm
-var madvStaticFocalUnicodeCharacter;
-var madvEnableSpaceInsertion;
-var madvRemoveLastSlideNullOrEmpty;
-var madvEnableHyphenatedWordSplit;
-var madvConsolidateHyphenatedWord;
-var madvEnableLongWordHyphenation;
-var madvLongWordTriggerCharacterCount;
-var madvLongWordMinCharacterPerSlidePostSplit;
-var madvLongWordCharacterTriggerDoNotJoin;
-var madvEnableAcronymDetection;
-var madvEnableNumberDecimalDetection;
+let madvStaticFocalUnicodeCharacter;
+let madvEnableSpaceInsertion;
+let madvRemoveLastSlideNullOrEmpty;
+let madvEnableHyphenatedWordSplit;
+let madvConsolidateHyphenatedWord;
+let madvEnableLongWordHyphenation;
+let madvLongWordTriggerCharacterCount;
+let madvLongWordMinCharacterPerSlidePostSplit;
+let madvLongWordCharacterTriggerDoNotJoin;
+let madvEnableAcronymDetection;
+let madvEnableNumberDecimalDetection;
 
-var madvWordFreqMinimumSlideDuration;
-var madvWordFreqHighestFreqSlideDuration;
-var madvWordFreqLowestFreqSlideDuration;
+let madvWordFreqMinimumSlideDuration;
+let madvWordFreqHighestFreqSlideDuration;
+let madvWordFreqLowestFreqSlideDuration;
 
-var madvWordLengthMinimumSlideDuration;
-var madvBasicMinimumSlideDuration;
-var madvDeleteEmptySlides;
-var madvWPMAdjustmentStep;
+let madvWordLengthMinimumSlideDuration;
+let madvBasicMinimumSlideDuration;
+let madvDeleteEmptySlides;
+let madvWPMAdjustmentStep;
 
 // Display
-var madvDisplaySentenceWhenPaused;
-var madvAutoHideSentence;
-var madvAutoHideSentenceSeconds;
-var madvDisplaySentenceTopBorder;
-var madvDisplaySentenceAtReaderOpen;
-var madvSentenceBackwardWordCount;
-var madvSentencePositionPercentOffset;
-var madvLargeStepNumberOfSlides;
-var madvOptimisedPositionLeftMarginPercent;
-var madvDisplayProgress;
-var madvDisplaySocial;
-var madvDisplayWPMSummary;
+let madvDisplaySentenceWhenPaused;
+let madvAutoHideSentence;
+let madvAutoHideSentenceSeconds;
+let madvDisplaySentenceTopBorder;
+let madvDisplaySentenceAtReaderOpen;
+let madvSentenceBackwardWordCount;
+let madvSentencePositionPercentOffset;
+let madvLargeStepNumberOfSlides;
+let madvAlwaysHideFocalGuide;
+let madvOptimisedPositionLeftMarginPercent;
+let madvDisplayProgress;
+let madvDisplaySocial;
+let madvDisplayWPMSummary;
 
 // Text Selection
-var madvHotkeySelectionEnabled;
+let madvHotkeySelectionEnabled;
 
 // Text Retrieval
-var madvSaveSlidePosition;
+let madvSaveSlidePosition;
 
 // Get the advanced settings from the local storage
 function getMoreAdvancedSettings() {
@@ -145,8 +146,8 @@ function getMoreAdvancedSettingsDefaults() {
 
 // Obtain the version number of the chrome extension and display
 function displayVersion() {
-	var version = chrome.app.getDetails().version;
-	var divVersion = document.getElementById('version');
+	const version = chrome.app.getDetails().version;
+	const divVersion = document.getElementById('version');
 	divVersion.innerHTML = "<br><b>Sprint Reader</b> (v" + version + ")";
 }
 
@@ -200,13 +201,13 @@ function reverseString(s){
 function getLanguage(selectedText){
 
 	// Detect the language of the passed in text
-	var selectedTextLanguage;
+	let selectedTextLanguage;
 	guessLanguage.detect(selectedText, function(language) {
 		selectedTextLanguage = language;
     	//console.log('Detected language of provided text is [' + language + ']');
   	});
 
-	var language = {};
+	const language = {};
 	language.shortname = selectedTextLanguage;
 	language.isrighttoleft = false;
 	language.pattern = 'en-us';
@@ -611,10 +612,10 @@ function htmlEntitiesDecode(str) {
 function insertSVG() {
 	jQuery(document).ready(function() {
 		jQuery('img.svg').each(function(){
-			var $img = jQuery(this);
-			var imgID = $img.attr('id');
-			var imgClass = $img.attr('class');
-			var imgURL = $img.attr('src');
+			const $img = jQuery(this);
+			const imgID = $img.attr('id');
+			const imgClass = $img.attr('class');
+			const imgURL = $img.attr('src');
 
 			jQuery.get(imgURL, function(data) {
 				// Get the SVG tag, ignore the rest
@@ -649,9 +650,9 @@ function insertSVG() {
 function loadScript(url, callback)
 {
     // Adding the script tag to the head of the document
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
+	const head = document.getElementsByTagName('head')[0];
+	const script = document.createElement('script');
+	script.type = 'text/javascript';
     script.src = url;
 
     // Then bind the event to the callback function.
