@@ -2,6 +2,7 @@
 ## Tortoise SVN
 #################
 
+.idea
 .svn
 bin
 obj
