@@ -1,100 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 
 <head>
-	<title>Sprint Reader</title>
-	
-	<!-- Link to jQuery library -->
-	<script src="../lib/jquery/jquery.min.js"></script>
-	
-	<!-- Link to bootstrap library -->
-	<script src="../lib/bootstrap/bootstrap.min.js"></script>
-	<link type="text/css" rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">
-	
-	<!-- Load local resources -->
-    <script src="utility.js"></script>
-	<script src="popup.js"></script>
-	<link type="text/css" rel="stylesheet" href="css/style.css" id="css-style">	
+  <title>Sprint Reader</title>
+
+  <!-- Link to jQuery library -->
+  <script src="../lib/jquery/jquery.min.js"></script>
+
+  <!-- Link to bootstrap library -->
+  <script src="../lib/bootstrap/bootstrap.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">
+
+  <!-- Load local resources -->
+  <script src="utility.js"></script>
+  <script src="popup.js"></script>
+  <link type="text/css" rel="stylesheet" href="css/style.css" id="css-style">
 </head>
 
 <body>
-	<div id="popup-container">
-		<img src="graphics/heading.png" alt="Sprint Reader">
-		<div class="tabbable">
-			<div class="tab-content">
-				<div id="tab1" class="tab-pane active">
-					<div id="container">						
-						<div id="spacer"></div>
-						<h3>So how do I sprint read?</h3>
-						<p>
-                        <div id="spacer"></div>	
-                        <div id="spacer"></div>	
-                          	<ol><b>Method 1 (The easy way)</b>
-                                <li>Highlight text on a webpage</li>
-                                <li>Right click</li>
-                                <li>Select "<b>Sprint read selected text</b>"</li>
-                            </ol>
-                            <div id="spacer"></div>
-                            <ol><b>Method 2 (to enable: advanced options)</b>
-                                <li>Press <b>CONTROL+ALT</b> (auto-select mode)</li>
-                                <li>Move mouse to highlight text</li>
-                                <li>Press <b>Z</b> to open reader</li><br>
-                            </ol>
-                            <em>Full list of shortcuts shown in reader window</em><br>
-                            <div id="spacer"></div>
-                            <a id="openReader" href="#">Launch Sprint Reader</a>				
-                        </p>
-						<div id="spacer"></div>
-					</div>
-					<div id="spacer"></div>
-				</div>
-				<div id="tab2" class="tab-pane">
-					<div id="container">	
-						<div id="version"><b>Sprint Reader</b></div>
-						<p>Project managed by <b>Anthony Nosek</b><br>
-						Send me an email: <a href="mailto:anthonynosek@gmail.com?Subject=Speed Reader Extension (Chrome)" target="_top">anthonynosek@gmail.com</a><br>
-                        Developed as an open source, community project.</p>
-                        <div id="spacer"></div>	
-                        <div id="spacer"></div>	
-                        <div id="develop" class="popup">
-                            <b>Help us develop Sprint Reader!</b>
-                            <p>Sprint Reader is an open source project which means you can contribute, fix bugs and add functionality.</p>
-                            <img src="graphics/github-mark-32px.png" style="vertical-align: middle;margin-right: 5px;"> <a href="https://github.com/anthonynosek/sprint-reader-chrome" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/anthonynosek/sprint-reader-chrome']);" target="_blank">Become a developer for Sprint Reader</a>
-                        </div>
-                        <div id="spacer"></div>	
-                        <div id="spacer"></div>	
-                        <div id="spacer"></div>
-                      	<p>Please show us your appreciation!<br>A like or follow is all we ask:</p>
-                        <li> <img src="graphics/facebook_16x16.png" style="vertical-align: middle;margin-right: 5px;"> <a href="https://www.facebook.com/SprintReader" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.facebook.com']);" target="_blank">Facebook</a> </li>
-						<li> <img src="graphics/google_plus_16x16.png" style="vertical-align: middle;margin-right: 5px;"> <a href="https://plus.google.com/u/0/b/105075625257906831241/105075625257906831241/posts?rel=author" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://plus.google.com']);" target="_blank">Google+</a> </li>                        
-					</div>
-				</div>
-                <div id="tab3" class="tab-pane">
-					<div id="container">
-						<div id="spacer"></div>	
-                        <div id="spacer"></div>
-                        <p>Sprint Reader would not be possible without the help and contributions of the following dedicated people:<br>
-                        <div id="acknowledge">- ashrode<br>
-                        - <a href="https://github.com/evanwolf" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/evanwolf']);" target="_blank">evanwolf</a><br>
-                        - Georgia Brandi<br>
-                        - Gemma Ferguson<br>
-                        - <a href="https://github.com/denilsonsa" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/denilsonsa']);" target="_blank">Denilson Figueiredo de Sa<br></a>
-                        - <a href="https://github.com/reischlfranz" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/reischlfranz']);" target="_blank">Nir Maoz</a><br>
-                        - <a href="https://github.com/spacetag" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/spacetag']);" target="_blank">spacetag</a><br>
-                        - <a href="https://github.com/twtu" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/twtu']);" target="_blank">twtu</a><br>
-                        - <a href="https://github.com/richardkopelow" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/richardkopelow']);" target="_blank">richardkopelow</a><br>
-                        <a href="https://github.com/anthonynosek/sprint-reader-chrome" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/anthonynosek/sprint-reader-chrome']);" target="_blank">You, yes YOU!</a></div>
-					</div>
-				</div>
-			</div>
-			<ul class="nav nav-tabs">
-				<li class="active"><a href="#tab1" data-toggle="tab">Welcome!</a></li>
-				<li><a href="#tab2" data-toggle="tab">About</a></li>
-                <li><a href="#tab3" data-toggle="tab">Acknowledgements</a></li>
-			</ul>			
-		</div>
-	</div>
+<div id="popup-container">
+  <img src="graphics/heading.png" alt="Sprint Reader">
+  <div class="tabbable">
+    <div class="tab-content">
+      <div id="tab1" class="tab-pane active">
+        <div class="container">
+          <div class="spacer"></div>
+          <h3>So how do I sprint read?</h3>
+          <p>
+          <div class="spacer"></div>
+          <div class="spacer"></div>
+          <ol><b>Method 1 (The easy way)</b>
+            <li>Highlight text on a webpage</li>
+            <li>Right click</li>
+            <li>Select "<b>Sprint read selected text</b>"</li>
+          </ol>
+          <div class="spacer"></div>
+          <ol><b>Method 2 (to enable: advanced options)</b>
+            <li>Press <b>CONTROL+ALT</b> (auto-select mode)</li>
+            <li>Move mouse to highlight text</li>
+            <li>Press <b>Z</b> to open reader</li>
+            <br>
+          </ol>
+          <em>Full list of shortcuts shown in reader window</em><br>
+          <div class="spacer"></div>
+          <a id="openReader" href="#">Launch Sprint Reader</a>
+          </p>
+          <div class="spacer"></div>
+        </div>
+        <div class="spacer"></div>
+      </div>
+      <div id="tab2" class="tab-pane">
+        <div class="container">
+          <div id="version"><b>Sprint Reader</b></div>
+          <p>Project managed by <b>Anthony Nosek</b><br>
+            Send me an email: <a href="mailto:anthonynosek@gmail.com?Subject=Speed Reader Extension (Chrome)"
+                                 target="_top">anthonynosek@gmail.com</a><br>
+            Developed as an open source, community project.</p>
+          <div class="spacer"></div>
+          <div class="spacer"></div>
+          <div id="develop" class="popup">
+            <b>Help us develop Sprint Reader!</b>
+            <p>Sprint Reader is an open source project which means you can contribute, fix bugs and add
+              functionality.</p>
+            <img src="graphics/github-mark-32px.png" style="vertical-align: middle;margin-right: 5px;"> <a
+              href="https://github.com/anthonynosek/sprint-reader-chrome"
+              onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/anthonynosek/sprint-reader-chrome']);"
+              target="_blank">Become a developer for Sprint Reader</a>
+          </div>
+          <div class="spacer"></div>
+          <div class="spacer"></div>
+          <div class="spacer"></div>
+          <p>Please show us your appreciation!<br>A like or follow is all we ask:</p>
+          <li><img src="graphics/facebook_16x16.png" style="vertical-align: middle;margin-right: 5px;"> <a
+              href="https://www.facebook.com/SprintReader"
+              onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.facebook.com']);"
+              target="_blank">Facebook</a></li>
+          <li><img src="graphics/google_plus_16x16.png" style="vertical-align: middle;margin-right: 5px;"> <a
+              href="https://plus.google.com/u/0/b/105075625257906831241/105075625257906831241/posts?rel=author"
+              onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://plus.google.com']);"
+              target="_blank">Google+</a></li>
+        </div>
+      </div>
+      <div id="tab3" class="tab-pane">
+        <div class="container">
+          <div class="spacer"></div>
+          <div class="spacer"></div>
+          <p>Sprint Reader would not be possible without the help and contributions of the following dedicated
+            people:<br>
+          <div id="acknowledge">- ashrode<br>
+            - <a href="https://github.com/evanwolf"
+                 onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/evanwolf']);"
+                 target="_blank">evanwolf</a><br>
+            - Georgia Brandi<br>
+            - Gemma Ferguson<br>
+            - <a href="https://github.com/denilsonsa"
+                 onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/denilsonsa']);"
+                 target="_blank">Denilson Figueiredo de Sa<br></a>
+            - <a href="https://github.com/reischlfranz"
+                 onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/reischlfranz']);"
+                 target="_blank">Nir Maoz</a><br>
+            - <a href="https://github.com/spacetag"
+                 onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/spacetag']);"
+                 target="_blank">spacetag</a><br>
+            - <a href="https://github.com/twtu"
+                 onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/twtu']);"
+                 target="_blank">twtu</a><br>
+            - <a href="https://github.com/richardkopelow"
+                 onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/richardkopelow']);"
+                 target="_blank">richardkopelow</a><br>
+            <a href="https://github.com/anthonynosek/sprint-reader-chrome"
+               onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/anthonynosek/sprint-reader-chrome']);"
+               target="_blank">You, yes YOU!</a></div>
+        </div>
+      </div>
+    </div>
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#tab1" data-toggle="tab">Welcome!</a></li>
+      <li><a href="#tab2" data-toggle="tab">About</a></li>
+      <li><a href="#tab3" data-toggle="tab">Acknowledgements</a></li>
+    </ul>
+  </div>
+</div>
 </body>
 
 </html>

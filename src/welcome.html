@@ -1,80 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 
 <head>
-	<title>Sprint Reader</title>
-    
-    <!-- Link to jQuery library -->
-	<script src="../lib/jquery/jquery.min.js"></script>
-    
-    <!-- Link to bootstrap library -->
-	<script src="../lib/bootstrap/bootstrap.min.js"></script>
-	<link type="text/css" rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">  
-    
-    <!-- Load local resources -->
-    <script src="utility.js"></script>
-    <script src="welcome.js"></script>
-    <link type="text/css" rel="stylesheet" href="css/style.css" id="css-style">
+  <title>Sprint Reader</title>
+
+  <!-- Link to jQuery library -->
+  <script src="../lib/jquery/jquery.min.js"></script>
+
+  <!-- Link to bootstrap library -->
+  <script src="../lib/bootstrap/bootstrap.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">
+
+  <!-- Load local resources -->
+  <script src="utility.js"></script>
+  <script src="welcome.js"></script>
+  <link type="text/css" rel="stylesheet" href="css/style.css" id="css-style">
 </head>
 <body>
-	<div id="welcome_container">
-        <div id="welcome_icon">
-            <img src="graphics/icon128.png" alt="Sprint Reader">
-        </div>
-        <div id="spacer"></div>
-        <h4>Thank you for installing Sprint Reader!</h4>
-        <p><b>Speed reading made easy</b>, train yourself to read 1800+ words per minute.<br>Rapid serial visual presentation (RSVP) at its best!</p> 
-        <div id="spacer"></div>	
-		<div id="container">
-        	<div class="input-column-container-block"> 
-				<div class="input-column-left">
-					<h3>Shortcut Keys</h3>
-					<p>
-                        <ol>- Open reader window | <b>CTRL+SHIFT+Z</b><br>
-                            - Toggle play/pause | <b>SPACE</b><br>
-                            - WPM step decrease/increase | <b>Z / X</b><br>
-                            - Step back/forward | <b>A / S</b><br>
-                            - Large step back/forward | <b>K / L</b><br>
-                            - Reset to start | <b>R</b><br>
-                            - Load clipboard contents | <b>C</b><br>
-                            - Load current selection | <b>V</b><br>
-                            - Close reader window | <b>Q</b><br> 								
-                        </ol>						
-                    </p>
-					<div id="spacer"></div>
-              	</div>
-           		<div class="input-column-right">
-                   	<h3>So how do I sprint read?</h3>
-              		<p>
-                    <ol><b>Method 1 (The easy way)</b>
-                        <li>Highlight text on a webpage</li>
-                        <li>Right click</li>
-                        <li>Select "<b>Sprint read selected text</b>"</li>
-                    </ol>
-                    <div id="spacer"></div>
-                    <ol><b>Method 2 (to enable: advanced options)</b>
-                        <li>Press <b>CONTROL+ALT</b> (auto-select mode)</li>
-                        <li>Move mouse to highlight text</li>
-                        <li>Press <b>Z</b> to open reader</li><br>
-                    </ol>						
-                </p>
-              	</div>
-          	</div> 
-       	</div>
-        <div id="spacer"></div>	
-      	<div id="develop">
-        	<b>Help us develop Sprint Reader!</b>
-        	<p>Sprint Reader is an open source project which means you can contribute, fix bugs and add functionality.</p>
-        	<img src="graphics/github-mark-32px.png" style="vertical-align: middle;margin-right: 5px;"> <a href="https://github.com/anthonynosek/sprint-reader-chrome" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/anthonynosek/sprint-reader-chrome']);" target="_blank">Become a developer for Sprint Reader</a>
-        </div>
-        <div id="spacer"></div>
-        <div id="spacer"></div>
-        <div id="version"><b>Sprint Reader</b></div>
-        <div>
-        	<p>Please show us your appreciation!<br>A like or follow is all we ask:</p>
-        	<li> <img src="graphics/facebook_16x16.png" style="vertical-align: middle;margin-right: 5px;"> <a href="https://www.facebook.com/SprintReader" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.facebook.com']);" target="_blank">Facebook</a> </li>
-        </div>
+<div id="welcome_container">
+  <div id="welcome_icon">
+    <img src="graphics/icon128.png" alt="Sprint Reader">
+  </div>
+  <div class="spacer"></div>
+  <h4>Thank you for installing Sprint Reader!</h4>
+  <p><b>Speed reading made easy</b>, train yourself to read 1800+ words per minute.<br>Rapid serial visual presentation
+    (RSVP) at its best!</p>
+  <div class="spacer"></div>
+  <div class="container">
+    <div class="input-column-container-block">
+      <div class="input-column-left">
+        <h3>Shortcut Keys</h3>
+        <p>
+        <ol>- Open reader window | <b>CTRL+SHIFT+Z</b><br>
+          - Toggle play/pause | <b>SPACE</b><br>
+          - WPM step decrease/increase | <b>Z / X</b><br>
+          - Step back/forward | <b>A / S</b><br>
+          - Large step back/forward | <b>K / L</b><br>
+          - Reset to start | <b>R</b><br>
+          - Load clipboard contents | <b>C</b><br>
+          - Load current selection | <b>V</b><br>
+          - Close reader window | <b>Q</b><br>
+        </ol>
+        </p>
+        <div class="spacer"></div>
+      </div>
+      <div class="input-column-right">
+        <h3>So how do I sprint read?</h3>
+        <p>
+        <ol>
+          <b>Method 1 (The easy way)</b>
+          <li>Highlight text on a webpage</li>
+          <li>Right click</li>
+          <li>Select "<b>Sprint read selected text</b>"</li>
+        </ol>
+        <div class="spacer"></div>
+        <ol>
+          <b>Method 2 (to enable: advanced options)</b>
+          <li>Press <b>CONTROL+ALT</b> (auto-select mode)</li>
+          <li>Move mouse to highlight text</li>
+          <li>Press <b>Z</b> to open reader</li>
+          <br>
+        </ol>
+        </p>
+      </div>
     </div>
+  </div>
+  <div class="spacer"></div>
+  <div id="develop">
+    <b>Help us develop Sprint Reader!</b>
+    <p>Sprint Reader is an open source project which means you can contribute, fix bugs and add functionality.</p>
+    <img src="graphics/github-mark-32px.png" style="vertical-align: middle;margin-right: 5px;"> <a
+      href="https://github.com/anthonynosek/sprint-reader-chrome"
+      onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','https://github.com/anthonynosek/sprint-reader-chrome']);"
+      target="_blank">Become a developer for Sprint Reader</a>
+  </div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div id="version"><b>Sprint Reader</b></div>
+  <div>
+    <p>Please show us your appreciation!<br>A like or follow is all we ask:</p>
+    <li><img src="graphics/facebook_16x16.png" style="vertical-align: middle;margin-right: 5px;"> <a
+        href="https://www.facebook.com/SprintReader"
+        onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.facebook.com']);" target="_blank">Facebook</a>
+    </li>
+  </div>
+</div>
 </body>
 </html>

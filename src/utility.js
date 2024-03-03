@@ -13,50 +13,51 @@
 
 // --------------------------------------------------
 // Misc.
-var textPositionDelimiter = "{{**POSI<>TION**}}";
+const textPositionDelimiter = "{{**POSI<>TION**}}";
 
 // MORE ADVANCED SETTINGS (Variables)
 // Algorithm
-var madvStaticFocalUnicodeCharacter;
-var madvEnableSpaceInsertion;
-var madvRemoveLastSlideNullOrEmpty;
-var madvEnableHyphenatedWordSplit;
-var madvConsolidateHyphenatedWord;
-var madvEnableLongWordHyphenation;
-var madvLongWordTriggerCharacterCount;
-var madvLongWordMinCharacterPerSlidePostSplit;
-var madvLongWordCharacterTriggerDoNotJoin;
-var madvEnableAcronymDetection;
-var madvEnableNumberDecimalDetection;
+let madvStaticFocalUnicodeCharacter;
+let madvEnableSpaceInsertion;
+let madvRemoveLastSlideNullOrEmpty;
+let madvEnableHyphenatedWordSplit;
+let madvConsolidateHyphenatedWord;
+let madvEnableLongWordHyphenation;
+let madvLongWordTriggerCharacterCount;
+let madvLongWordMinCharacterPerSlidePostSplit;
+let madvLongWordCharacterTriggerDoNotJoin;
+let madvEnableAcronymDetection;
+let madvEnableNumberDecimalDetection;
 
-var madvWordFreqMinimumSlideDuration;
-var madvWordFreqHighestFreqSlideDuration;
-var madvWordFreqLowestFreqSlideDuration;
+let madvWordFreqMinimumSlideDuration;
+let madvWordFreqHighestFreqSlideDuration;
+let madvWordFreqLowestFreqSlideDuration;
 
-var madvWordLengthMinimumSlideDuration;
-var madvBasicMinimumSlideDuration;
-var madvDeleteEmptySlides;
-var madvWPMAdjustmentStep;
+let madvWordLengthMinimumSlideDuration;
+let madvBasicMinimumSlideDuration;
+let madvDeleteEmptySlides;
+let madvWPMAdjustmentStep;
 
 // Display
-var madvDisplaySentenceWhenPaused;
-var madvAutoHideSentence;
-var madvAutoHideSentenceSeconds;
-var madvDisplaySentenceTopBorder;
-var madvDisplaySentenceAtReaderOpen;
-var madvSentenceBackwardWordCount;
-var madvSentencePositionPercentOffset;
-var madvLargeStepNumberOfSlides;
-var madvOptimisedPositionLeftMarginPercent;
-var madvDisplayProgress;
-var madvDisplaySocial;
-var madvDisplayWPMSummary;
+let madvDisplaySentenceWhenPaused;
+let madvAutoHideSentence;
+let madvAutoHideSentenceSeconds;
+let madvDisplaySentenceTopBorder;
+let madvDisplaySentenceAtReaderOpen;
+let madvSentenceBackwardWordCount;
+let madvSentencePositionPercentOffset;
+let madvLargeStepNumberOfSlides;
+let madvAlwaysHideFocalGuide;
+let madvOptimisedPositionLeftMarginPercent;
+let madvDisplayProgress;
+let madvDisplaySocial;
+let madvDisplayWPMSummary;
 
 // Text Selection
-var madvHotkeySelectionEnabled;
+let madvHotkeySelectionEnabled;
 
 // Text Retrieval
-var madvSaveSlidePosition;
+let madvSaveSlidePosition;
 
 // Get the advanced settings from the local storage
 function getMoreAdvancedSettings() {
@@ -65,40 +66,40 @@ function getMoreAdvancedSettings() {
 	madvRemoveLastSlideNullOrEmpty = getFromLocalNotEmpty('madvRemoveLastSlideNullOrEmpty', madvRemoveLastSlideNullOrEmpty);
 	madvEnableHyphenatedWordSplit = getFromLocalNotEmpty('madvEnableHyphenatedWordSplit', madvEnableHyphenatedWordSplit);
 	madvConsolidateHyphenatedWord = getFromLocalNotEmpty('madvConsolidateHyphenatedWord', madvConsolidateHyphenatedWord);
-	
+
 	madvEnableLongWordHyphenation = getFromLocalNotEmpty('madvEnableLongWordHyphenation', madvEnableLongWordHyphenation);
 	madvLongWordTriggerCharacterCount = getFromLocalGreaterThanZero('madvLongWordTriggerCharacterCount', madvLongWordTriggerCharacterCount);
 	madvLongWordMinCharacterPerSlidePostSplit = getFromLocalGreaterThanZero('madvLongWordMinCharacterPerSlidePostSplit', madvLongWordMinCharacterPerSlidePostSplit);
 	madvLongWordCharacterTriggerDoNotJoin = getFromLocalGreaterThanZero('madvLongWordCharacterTriggerDoNotJoin', madvLongWordCharacterTriggerDoNotJoin);
-	
+
 	madvEnableAcronymDetection = getFromLocalNotEmpty('madvEnableAcronymDetection', madvEnableAcronymDetection);
-	madvEnableNumberDecimalDetection = getFromLocalNotEmpty('madvEnableNumberDecimalDetection', madvEnableNumberDecimalDetection);	
-	madvDeleteEmptySlides = getFromLocalNotEmpty('madvDeleteEmptySlides', madvDeleteEmptySlides);	
+	madvEnableNumberDecimalDetection = getFromLocalNotEmpty('madvEnableNumberDecimalDetection', madvEnableNumberDecimalDetection);
+	madvDeleteEmptySlides = getFromLocalNotEmpty('madvDeleteEmptySlides', madvDeleteEmptySlides);
 	madvWPMAdjustmentStep = getFromLocalGreaterThanZero('madvWPMAdjustmentStep', madvWPMAdjustmentStep);
-	
+
 	madvWordFreqMinimumSlideDuration = getFromLocalGreaterThanZero('madvWordFreqMinimumSlideDuration', madvWordFreqMinimumSlideDuration);
 	madvWordFreqHighestFreqSlideDuration = getFromLocalGreaterThanZero('madvWordFreqHighestFreqSlideDuration', madvWordFreqHighestFreqSlideDuration);
 	madvWordFreqLowestFreqSlideDuration = getFromLocalGreaterThanZero('madvWordFreqLowestFreqSlideDuration', madvWordFreqLowestFreqSlideDuration);
-	
+
 	madvWordLengthMinimumSlideDuration = getFromLocalGreaterThanZero('madvWordLengthMinimumSlideDuration', madvWordLengthMinimumSlideDuration);
-	madvBasicMinimumSlideDuration = getFromLocalGreaterThanZero('madvBasicMinimumSlideDuration', madvBasicMinimumSlideDuration);	
-	
-	madvAlwaysHideFocalGuide = getFromLocalNotEmpty('madvAlwaysHideFocalGuide', madvAlwaysHideFocalGuide);	
+	madvBasicMinimumSlideDuration = getFromLocalGreaterThanZero('madvBasicMinimumSlideDuration', madvBasicMinimumSlideDuration);
+
+	madvAlwaysHideFocalGuide = getFromLocalNotEmpty('madvAlwaysHideFocalGuide', madvAlwaysHideFocalGuide);
 	madvOptimisedPositionLeftMarginPercent = getFromLocalGreaterThanZero('madvOptimisedPositionLeftMarginPercent', madvOptimisedPositionLeftMarginPercent);
-	madvDisplaySentenceWhenPaused = getFromLocalNotEmpty('madvDisplaySentenceWhenPaused', madvDisplaySentenceWhenPaused);	
-	madvAutoHideSentence = getFromLocalNotEmpty('madvAutoHideSentence', madvAutoHideSentence);	
+	madvDisplaySentenceWhenPaused = getFromLocalNotEmpty('madvDisplaySentenceWhenPaused', madvDisplaySentenceWhenPaused);
+	madvAutoHideSentence = getFromLocalNotEmpty('madvAutoHideSentence', madvAutoHideSentence);
 	madvAutoHideSentenceSeconds = getFromLocalGreaterThanZero('madvAutoHideSentenceSeconds', madvAutoHideSentenceSeconds);
 	madvDisplaySentenceTopBorder = getFromLocalNotEmpty('madvDisplaySentenceTopBorder', madvDisplaySentenceTopBorder);
 	madvDisplaySentenceAtReaderOpen = getFromLocalNotEmpty('madvDisplaySentenceAtReaderOpen', madvDisplaySentenceAtReaderOpen);
 	madvSentenceBackwardWordCount = getFromLocalGreaterThanZero('madvSentenceBackwardWordCount', madvSentenceBackwardWordCount);
 	madvSentencePositionPercentOffset = getFromLocalGreaterThanZero('madvSentencePositionPercentOffset', madvSentencePositionPercentOffset);
 	madvLargeStepNumberOfSlides = getFromLocalGreaterThanZero('madvLargeStepNumberOfSlides', madvLargeStepNumberOfSlides);
-	madvDisplayProgress = getFromLocalNotEmpty('madvDisplayProgress', madvDisplayProgress);	
-	madvDisplaySocial = getFromLocalNotEmpty('madvDisplaySocial', madvDisplaySocial);	
-	madvDisplayWPMSummary = getFromLocalNotEmpty('madvDisplayWPMSummary', madvDisplayWPMSummary);	
-	
+	madvDisplayProgress = getFromLocalNotEmpty('madvDisplayProgress', madvDisplayProgress);
+	madvDisplaySocial = getFromLocalNotEmpty('madvDisplaySocial', madvDisplaySocial);
+	madvDisplayWPMSummary = getFromLocalNotEmpty('madvDisplayWPMSummary', madvDisplayWPMSummary);
+
 	madvHotkeySelectionEnabled = getFromLocalNotEmpty('madvHotkeySelectionEnabled', madvHotkeySelectionEnabled);
-	
+
 	madvSaveSlidePosition = getFromLocalNotEmpty('madvSaveSlidePosition', madvSaveSlidePosition);
 }
 
@@ -115,11 +116,11 @@ function getMoreAdvancedSettingsDefaults() {
 	madvLongWordCharacterTriggerDoNotJoin = 4;
 	madvEnableAcronymDetection = 'true';
 	madvEnableNumberDecimalDetection = 'true';
-	
+
 	madvWordFreqMinimumSlideDuration = 40;
 	madvWordFreqHighestFreqSlideDuration = 40;
 	madvWordFreqLowestFreqSlideDuration = 300;
-	
+
 	madvWordLengthMinimumSlideDuration = 0;
 	madvBasicMinimumSlideDuration = 0;
 	madvDeleteEmptySlides = 'true';
@@ -145,8 +146,8 @@ function getMoreAdvancedSettingsDefaults() {
 
 // Obtain the version number of the chrome extension and display
 function displayVersion() {
-	var version = chrome.app.getDetails().version;
-	var divVersion = document.getElementById('version');
+	const version = chrome.app.getDetails().version;
+	const divVersion = document.getElementById('version');
 	divVersion.innerHTML = "<br><b>Sprint Reader</b> (v" + version + ")";
 }
 
@@ -200,17 +201,17 @@ function reverseString(s){
 function getLanguage(selectedText){
 
 	// Detect the language of the passed in text
-	var selectedTextLanguage;
+	let selectedTextLanguage;
 	guessLanguage.detect(selectedText, function(language) {
-		selectedTextLanguage = language;		
+		selectedTextLanguage = language;
     	//console.log('Detected language of provided text is [' + language + ']');
   	});
-	
-	var language = {};
+
+	const language = {};
 	language.shortname = selectedTextLanguage;
 	language.isrighttoleft = false;
 	language.pattern = 'en-us';
-	
+
 	switch(selectedTextLanguage)
 	{
 		case 'en':
@@ -541,7 +542,7 @@ function getLanguage(selectedText){
 		default:
 	  		language.fullname = "";
 	}
-	
+
 	// load the pattern script
 	var patternJS = '../lib/guess_language/language_patterns/' + language.pattern + '.js'
 	$.ajax({
@@ -556,8 +557,8 @@ function getLanguage(selectedText){
 // --------------------------------------------------
 // Return just the text part of the selected text or history item
 function getSelectedTextFromResourceString(textFromResource) {
-	if (textFromResource == null) return { text: "", position: 0 };
-	if (textFromResource.length == 0) return { text: "", position: 0 };
+	if (!textFromResource) return { text: "", position: 0 };
+	if (textFromResource.length === 0) return { text: "", position: 0 };
 	var textArray = textFromResource.split(textPositionDelimiter);
 	if (textArray.length >= 1) {
 		return {
@@ -573,22 +574,22 @@ function getSelectedTextFromResourceString(textFromResource) {
 // Shuffle the text history items as the reader is closed
 function saveSelectedTextToResource(latestTextSelection) {
 	if (latestTextSelection == null) latestTextSelection = "";
-	
+
 	// Don't save duplicate text selections... why would we do this???
 	var text = getSelectedTextFromResourceString(localStorage.getItem('selectedText'));
-	if (text.text == latestTextSelection) return;
-	
+	if (text.text === latestTextSelection) return;
+
 	var hist1 = getSelectedTextFromResourceString(localStorage.getItem('selectedTextHistory1'));
 
 	// Save the historical text
-	if (text.text != hist1.text) {
+	if (text.text !== hist1.text) {
 		// Move history1 to history 2
-		if (hist1.text != "") {
+		if (hist1.text !== "") {
 			localStorage.setItem("selectedTextHistory2", hist1.fulltext);
-		}		
+		}
 		// Save the currently selected text to history 1
 		// Window will reopen with latest selected text
-		if (text.text != "") {
+		if (text.text !== "") {
 			localStorage.setItem("selectedTextHistory1", text.fulltext);
 		}
 	}
@@ -608,18 +609,18 @@ function htmlEntitiesDecode(str) {
 
 // --------------------------------------------------
 // Replace all SVG images with inline SVG
-function insertSVG() {	
+function insertSVG() {
 	jQuery(document).ready(function() {
 		jQuery('img.svg').each(function(){
-			var $img = jQuery(this);
-			var imgID = $img.attr('id');
-			var imgClass = $img.attr('class');
-			var imgURL = $img.attr('src');
-			
+			const $img = jQuery(this);
+			const imgID = $img.attr('id');
+			const imgClass = $img.attr('class');
+			const imgURL = $img.attr('src');
+
 			jQuery.get(imgURL, function(data) {
 				// Get the SVG tag, ignore the rest
 				var $svg = jQuery(data).find('svg');
-				
+
 				// Add replaced image's ID to the new SVG
 				if(typeof imgID !== 'undefined') {
 					$svg = $svg.attr('id', imgID);
@@ -628,16 +629,16 @@ function insertSVG() {
 				if(typeof imgClass !== 'undefined') {
 					$svg = $svg.attr('class', imgClass + ' replaced-svg');
 				}
-				
+
 				// Remove any invalid XML tags as per http://validator.w3.org
 				$svg = $svg.removeAttr('xmlns:a');
-				
+
 				// Replace image with new SVG
 				$img.replaceWith($svg);
 			}, 'xml');
-		});		
-	});	
-	
+		});
+	});
+
 	$(window).load(function() {
 		// Update the css for the github_logo class (path)
 		jQuery('.github_logo path').css('fill', colorSentenceBorder);
@@ -649,9 +650,9 @@ function insertSVG() {
 function loadScript(url, callback)
 {
     // Adding the script tag to the head of the document
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
+	const head = document.getElementsByTagName('head')[0];
+	const script = document.createElement('script');
+	script.type = 'text/javascript';
     script.src = url;
 
     // Then bind the event to the callback function.
